@@ -18,6 +18,7 @@
   "license": "MIT",
   "dependencies": {
     "@ahrefs/bs-atdgen-codec-runtime": "^1.4.0",
+    "@glennsl/bs-json": "^4.0.0",
     "bs-emotion": "^0.1.1",
     "bs-fetch": "^0.5.0",
     "bs-json": "^1.0.1",

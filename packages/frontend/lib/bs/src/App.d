@@ -1,1 +1,1 @@
-src/App-Tripdeer.cmj : Tripdeer.cmi
+src/App-Tripdeer.cmj : Tripdeer.cmi src/components/Footer-Tripdeer.cmj src/components/Footer-Tripdeer.cmi src/components/Header-Tripdeer.cmj src/components/Header-Tripdeer.cmi src/Pages/Home-Tripdeer.cmj src/Pages/Home-Tripdeer.cmi src/Pages/Jobs-Tripdeer.cmj src/Pages/Jobs-Tripdeer.cmi src/helpers/Prelude-Tripdeer.cmj src/helpers/Prelude-Tripdeer.cmi

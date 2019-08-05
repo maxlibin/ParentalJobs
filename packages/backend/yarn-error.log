@@ -1,0 +1,54 @@
+Arguments: 
+  /Users/maxli/.nvm/versions/node/v8.12.0/bin/node /Users/maxli/.nvm/versions/node/v8.12.0/bin/yarn
+
+PATH: 
+  /Users/maxli/.nvm/versions/node/v8.12.0/bin:/Users/maxli/.fzf/bin:/Users/maxli/Desktop/google-cloud-sdk/bin:/Users/maxli/.composer/vendor/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/maxli/.composer/vendor/bin
+
+Yarn version: 
+  1.17.3
+
+Node version: 
+  8.12.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  SyntaxError: /Users/maxli/workspace/parentalJobs/packages/backend/package.json: Unexpected token } in JSON at position 419
+      at JSON.parse (<anonymous>)
+      at /Users/maxli/.nvm/versions/node/v8.12.0/lib/node_modules/yarn/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/Users/maxli/.nvm/versions/node/v8.12.0/lib/node_modules/yarn/lib/cli.js:304:30)
+      at /Users/maxli/.nvm/versions/node/v8.12.0/lib/node_modules/yarn/lib/cli.js:315:13
+      at <anonymous>
+
+npm manifest: 
+  {
+    "name": "backend",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "scripts": {
+      "build": "babel src -d lib",
+      "dev": "babel ./src/db/DB.js"
+    },
+    "dependencies": {
+      "@babel/cli": "^7.5.5",
+      "@babel/core": "^7.5.5",
+      "@babel/node": "^7.5.5",
+      "@babel/preset-env": "^7.5.5",
+      "cross-env": "5.0.5",
+      "dotenv": "^8.0.0",
+      "firebase": "^6.3.3",
+      "mongoose": "^5.6.8",
+    },
+    "devDependencies": {
+      "nodemon": "^1.19.1"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

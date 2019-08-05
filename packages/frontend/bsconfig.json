@@ -9,13 +9,20 @@
     "subdirs" : true
   },
   "package-specs": [{
-    "module": "commonjs",
+    "module": "es6",
     "in-source": true
   }],
+  "bsc-flags": [
+    "-bs-super-errors",
+    "-open Belt"
+  ],
   "suffix": ".bs.js",
   "namespace": true,
   "bs-dependencies": [
-    "reason-react"
+    "reason-react",
+    "@glennsl/bs-json",
+    "bs-fetch",
+    "@ahrefs/bs-atdgen-codec-runtime"
   ],
   "refmt": 3
 }
