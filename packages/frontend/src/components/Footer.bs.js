@@ -12,7 +12,7 @@ function Footer(Props) {
                       className: "row align-items-center flex-row-reverse"
                     }, React.createElement("div", {
                           className: "col-12 col-lg-auto mt-3 mt-lg-0 text-center"
-                        }, Prelude$Tripdeer.s("Copyright 2019 Snappee")))));
+                        }, Prelude$Tripdeer.s("Copyright 2019 ParentalJobs")))));
 }
 
 var make = Footer;

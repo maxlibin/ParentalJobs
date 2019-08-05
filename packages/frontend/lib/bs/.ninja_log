@@ -74,3 +74,8 @@
 30	50	1565022220086905097	src/Index-Tripdeer.cmj	f262ea83fa5d614
 30	50	1565022220086905097	/Users/maxli/workspace/parentalJobs/packages/frontend/src/Index.bs.js	f262ea83fa5d614
 30	50	1565022220086905097	src/Index-Tripdeer.cmi	f262ea83fa5d614
+1	29	1565022381257636058	src/components/Footer.mlast	270c83947bc6efba
+29	37	1565022381257636058	src/components/Footer.d	59be9bf248fdedcb
+37	79	1565022381257636058	src/components/Footer-Tripdeer.cmj	341539ec992fdb79
+37	79	1565022381257636058	/Users/maxli/workspace/parentalJobs/packages/frontend/src/components/Footer.bs.js	341539ec992fdb79
+37	79	1565022381257636058	src/components/Footer-Tripdeer.cmi	341539ec992fdb79
