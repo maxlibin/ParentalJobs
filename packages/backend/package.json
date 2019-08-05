@@ -1,0 +1,11 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "cross-env": "5.0.5",
+    "dotenv": "^8.0.0",
+    "firebase": "^6.3.3"
+  }
+}

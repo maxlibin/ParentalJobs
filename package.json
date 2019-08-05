@@ -1,0 +1,8 @@
+{
+  "private": true,
+  "workspaces": ["packages/*"],
+  "scripts": {
+    "dev": "cd packages/frontend && yarn dev",
+    "open": "start http://localhost:3000"
+  }
+}

@@ -1,0 +1,1 @@
+module.exports = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='480' width='640' viewBox='0 0 640 480'%3E%3Cg fill-rule='evenodd'%3E%3Cpath fill='%23fff' d='M212.875 0h213.95v480h-213.95z'/%3E%3Cpath fill='red' d='M0 0h212.875v480H0zM425.163 0H640v480H425.162z'/%3E%3C/g%3E%3C/svg%3E"
