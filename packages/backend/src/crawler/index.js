@@ -2,7 +2,7 @@ const puppeteer = require("puppeteer");
 const cheerio = require("cheerio");
 
 let urlPage = 0;
-const maxPage = 5; // temp...
+const maxPage = 50; // temp...
 
 (async () => {
   const browser = await puppeteer.launch({

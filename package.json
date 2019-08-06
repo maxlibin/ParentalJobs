@@ -3,6 +3,7 @@
   "workspaces": ["packages/*"],
   "scripts": {
     "dev": "cd packages/frontend && yarn dev",
+    "crawl": "cd packages/backend && yarn crawl",
     "open": "start http://localhost:3000"
   }
 }

@@ -29,7 +29,7 @@ Frontend is using ReasonReact / ReasonML
 
 ## Backend:
 
-Backend currently using NodeJs + Mongo
+Backend currently using NodeJs + Mongo,
 
 ### Start a MongoDB Server
 
@@ -39,3 +39,11 @@ Install and start a mongod process.
 mongod --dbpath=/data
 
 You should see the mongod process start up and print some status information.
+
+### Crawler:
+
+Crawler will crawl `skillfuture website` recusivly using puppeteer(for js execution), currently set to total crawl page to 50.
+
+```
+yarn crawl
+```
