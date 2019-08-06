@@ -18,7 +18,10 @@
   ],
   "suffix": ".bs.js",
   "namespace": true,
+  "ppx-flags": ["bs-emotion-ppx/ppx"],
   "bs-dependencies": [
+    "bs-emotion",
+    "re-classnames",
     "reason-react",
     "@glennsl/bs-json",
     "bs-fetch",
