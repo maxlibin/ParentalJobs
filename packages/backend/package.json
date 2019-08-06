@@ -5,13 +5,16 @@
   "license": "MIT",
   "scripts": {
     "build": "babel src -d lib",
-    "dev": "nodemon --exec babel-node ./src/db/DB.js"
+    "dev": "nodemon --exec babel-node ./src/db/DB.js",
+    "crawl": "nodemon --exec babel-node ./src/crawler/index.js"
   },
   "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
     "cross-env": "5.0.5",
     "dotenv": "^8.0.0",
     "firebase": "^6.3.3",
-    "mongoose": "^5.6.8"
+    "mongoose": "^5.6.8",
+    "puppeteer": "^1.19.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.5",
