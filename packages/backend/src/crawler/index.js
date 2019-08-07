@@ -2,7 +2,10 @@ const puppeteer = require("puppeteer");
 const cheerio = require("cheerio");
 
 let urlPage = 0;
-const maxPage = 50; // temp...
+const maxPage = 5; // TODO:
+const domain = "https://www.mycareersfuture.sg";
+let defaultUrl = page =>
+  `${domain}/search?sortBy=new_posting_date&page=${page}`;
 
 (async () => {
   const browser = await puppeteer.launch({
@@ -22,25 +25,47 @@ const maxPage = 50; // temp...
     return urls;
   };
 
-  const goToUrl = async urlPage => {
+  const getContentRec = async (urlList, page, urlPage) => {
+    if (urlPage === urlList.length) {
+      await page.close();
+
+      return;
+    }
+
+    const url = `${domain}${urlsList[urlPage]}`;
+    const nextPage = urlPage + 1;
+
+    await page.goto(url, { waitUntil: "networkidle0" });
+
+    getContentRec(urlList, page, nextPage);
+  };
+
+  const getUrlsContent = async urlsList => {
+    const page = await browser.newPage();
+
+    getContentRec(urlsList, page, 0);
+  };
+
+  const goToUrlRec = async (url, urlPage) => {
     try {
       if (urlPage === maxPage) {
         await browser.close();
         return;
       }
 
-      const url = `https://www.mycareersfuture.sg/search?sortBy=new_posting_date&page=${urlPage}`;
-
       await page.goto(url, { waitUntil: "networkidle0" });
 
       const bodyHTML = await page.evaluate(() => document.body.innerHTML);
-      const getUrlList = getUrlsAsList(bodyHTML);
+      const urlList = getUrlsAsList(bodyHTML);
 
-      goToUrl(urlPage + 1);
+      getUrlsContent(urlList);
+
+      const nextPage = urlPage + 1;
+      goToUrlRec(defaultUrl(nextPage), nextPage);
     } catch (err) {
       console.log(err);
     }
   };
 
-  await goToUrl(0);
+  await goToUrlRec(defaultUrl(0), 0);
 })();
