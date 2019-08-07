@@ -2,7 +2,8 @@
   "private": true,
   "workspaces": ["packages/*"],
   "scripts": {
-    "dev": "cd packages/frontend && yarn dev",
+    "dev:frontend": "cd packages/frontend && yarn dev",
+    "dev:backend": "cd packages/backend && yarn dev",
     "crawl": "cd packages/backend && yarn crawl",
     "open": "start http://localhost:3000"
   }

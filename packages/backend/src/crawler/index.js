@@ -11,24 +11,36 @@ const maxPage = 50; // temp...
 
   const page = await browser.newPage();
 
+  const getUrlsAsList = bodyHTML => {
+    let urls = [];
+    const $ = cheerio.load(bodyHTML);
+
+    $(".card-list div[id^=job-card] a").each((index, ele) =>
+      urls.push($(ele).attr("href"))
+    );
+
+    return urls;
+  };
+
   const goToUrl = async urlPage => {
-    if (urlPage === maxPage) {
-      await browser.close();
+    try {
+      if (urlPage === maxPage) {
+        await browser.close();
+        return;
+      }
 
-      return;
+      const url = `https://www.mycareersfuture.sg/search?sortBy=new_posting_date&page=${urlPage}`;
+
+      await page.goto(url, { waitUntil: "networkidle0" });
+
+      const bodyHTML = await page.evaluate(() => document.body.innerHTML);
+      const getUrlList = getUrlsAsList(bodyHTML);
+
+      goToUrl(urlPage + 1);
+    } catch (err) {
+      console.log(err);
     }
-
-    const url = `https://www.mycareersfuture.sg/search?sortBy=new_posting_date&page=${urlPage}`;
-
-    await page.goto(url, { waitUntil: "networkidle0" });
-    goToUrl(urlPage + 1);
   };
 
   await goToUrl(0);
-  // let bodyHTML = await page.evaluate(() => document.body.innerHTML);
-
-  // console.log(bodyHTML);
-  // await page.screenshot({ path: "example.png" });
-
-  // await browser.close();
 })();
