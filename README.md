@@ -47,3 +47,8 @@ Crawler will crawl `skillfuture website` recusivly using puppeteer(for js execut
 ```
 yarn crawl
 ```
+
+Crawler is written in nodejs using puppeteer, might not be most effective way, but it does the job that crawls js executed site, for now.
+Tried on local machine 30mins for 2000 js executed pages. 
+Probably should setup some clustering for the crawler.
+
