@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "build": "babel src -d lib",
-    "dev": "nodemon --exec babel-node ./src/db/DB.js",
+    "dev": "nodemon --exec babel-node ./src/index.js",
     "crawl": "nodemon --exec babel-node ./src/crawler/index.js"
   },
   "dependencies": {

@@ -18,7 +18,7 @@ function Home(Props) {
                   className: Home_Css$Tripdeer.header
                 }, React.createElement("h1", {
                       className: Home_Css$Tripdeer.title
-                    }, Prelude$Tripdeer.s("Parental friendly jobs")), React.createElement("h3", {
+                    }, Prelude$Tripdeer.s("Parents friendly jobs")), React.createElement("h3", {
                       className: Home_Css$Tripdeer.subTitle
                     }, Prelude$Tripdeer.s("Parental job is the largest parents friendly work community in the world. We aggregate jobs from everywhere so you don't have to search around.")), React.createElement("button", {
                       className: Home_Css$Tripdeer.button
