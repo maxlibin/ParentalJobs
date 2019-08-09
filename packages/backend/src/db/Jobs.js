@@ -21,9 +21,9 @@ const Job = new Schema({
   minExperience: String,
   jobCategories: String,
   salary: {
-    from: String,
-    to: String,
-    to: String
+    salaryFrom: String,
+    salaryTo: String,
+    salaryType: String
   },
   postedOn: String,
   jobDescription: String,

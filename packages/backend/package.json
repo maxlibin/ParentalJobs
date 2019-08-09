@@ -9,9 +9,11 @@
     "crawl": "nodemon --exec babel-node ./src/crawler/index.js"
   },
   "dependencies": {
+    "body-parser": "^1.19.0",
     "cheerio": "^1.0.0-rc.3",
     "cross-env": "5.0.5",
     "dotenv": "^8.0.0",
+    "express": "^4.17.1",
     "firebase": "^6.3.3",
     "mongoose": "^5.6.8",
     "puppeteer": "^1.19.0"

@@ -13,8 +13,15 @@ function get(url, decode) {
 
 var Fetch$1 = /* module */[/* get */get];
 
+function latest(decode) {
+  return get("/api/jobs/latest", decode);
+}
+
+var Jobs = /* module */[/* latest */latest];
+
 export {
   Fetch$1 as Fetch,
+  Jobs ,
   
 }
 /* No side effect */

@@ -7,3 +7,7 @@ module Fetch = {
     );
   };
 };
+
+module Jobs = {
+  let latest = decode => Fetch.get("/api/jobs/latest", decode);
+};

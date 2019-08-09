@@ -33,9 +33,9 @@ let defaultUrl = page =>
       minExperience: $("#min_experience").text(),
       jobCategories: $("#job-categories").text(),
       salary: {
-        from: $(".salary_range .dib:nth-child(1)").text(),
-        to: $(".salary_range .dib:nth-child(2)").text(),
-        to: $(".salary_type").text()
+        salaryFrom: $(".salary_range .dib:nth-child(1)").text(),
+        salaryTo: $(".salary_range .dib:nth-child(2)").text(),
+        salaryType: $(".salary_type").text()
       },
       postedOn: $("#last_posted_date").text(),
       jobDescription: $("#job_description").html(), // TODO: Need to clean up data, currently on frontend side dangerouslySetInnerHTML

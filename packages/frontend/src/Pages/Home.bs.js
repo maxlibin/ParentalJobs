@@ -2,27 +2,41 @@
 
 import * as Cn from "re-classnames/src/Cn.bs.js";
 import * as React from "react";
+import * as Api$Tripdeer from "../helpers/Api.bs.js";
 import * as Prelude$Tripdeer from "../helpers/Prelude.bs.js";
 import * as Home_Css$Tripdeer from "./Home_Css.bs.js";
 
 function Home(Props) {
-  return React.createElement("div", {
-              className: Cn.make(/* :: */[
-                    "container",
-                    /* :: */[
-                      Home_Css$Tripdeer.container,
-                      /* [] */0
-                    ]
-                  ])
-            }, React.createElement("div", {
-                  className: Home_Css$Tripdeer.header
-                }, React.createElement("h1", {
-                      className: Home_Css$Tripdeer.title
-                    }, Prelude$Tripdeer.s("Parents friendly jobs")), React.createElement("h3", {
-                      className: Home_Css$Tripdeer.subTitle
-                    }, Prelude$Tripdeer.s("Parental job is the largest parents friendly work community in the world. We aggregate jobs from everywhere so you don't have to search around.")), React.createElement("button", {
-                      className: Home_Css$Tripdeer.button
-                    }, Prelude$Tripdeer.s("Post a job for free!"))));
+  React.useEffect((function () {
+          Api$Tripdeer.Jobs[/* latest */0]((function (prim) {
+                  console.log(prim);
+                  return /* () */0;
+                }));
+          return undefined;
+        }), ([]));
+  return React.createElement(React.Fragment, undefined, React.createElement("div", {
+                  className: Home_Css$Tripdeer.container
+                }, React.createElement("div", {
+                      className: "container"
+                    }, React.createElement("div", {
+                          className: Home_Css$Tripdeer.header
+                        }, React.createElement("h1", {
+                              className: Home_Css$Tripdeer.title
+                            }, Prelude$Tripdeer.s("Parents friendly jobs")), React.createElement("h3", {
+                              className: Home_Css$Tripdeer.subTitle
+                            }, Prelude$Tripdeer.s("Parental job is the largest parents friendly work community in the\n          world. We aggregate jobs from everywhere so you don't have to search around everywhere.")), React.createElement("button", {
+                              className: Home_Css$Tripdeer.button
+                            }, Prelude$Tripdeer.s("Post a job for free!"))))), React.createElement("div", {
+                  className: Cn.make(/* :: */[
+                        "container",
+                        /* :: */[
+                          Home_Css$Tripdeer.jobsList,
+                          /* [] */0
+                        ]
+                      ])
+                }, React.createElement("ul", undefined, React.createElement("li", {
+                          className: Home_Css$Tripdeer.job
+                        }, Prelude$Tripdeer.s("")))));
 }
 
 var Css = 0;

@@ -41,3 +41,14 @@ let button = [%css [
   color Css.Color.white;
   fontWeight 700;
 ]]
+
+let jobsList = [%css [
+  marginTop (`px 30);
+]]
+
+let job = [%css [
+  backgroundColor (`rgba(255, 137, 32, 0.18));
+  margin `zero;
+  listStyleType `none;
+  padding (`px 10);
+]]

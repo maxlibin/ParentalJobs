@@ -152,6 +152,45 @@ var button = Emotion.css(undefined, /* :: */[
       ]
     ]);
 
+var jobsList = Emotion.css(undefined, /* :: */[
+      Emotion.label("jobsList"),
+      /* :: */[
+        Emotion.marginTop(/* `px */[
+              25096,
+              30
+            ]),
+        /* [] */0
+      ]
+    ]);
+
+var job = Emotion.css(undefined, /* :: */[
+      Emotion.label("job"),
+      /* :: */[
+        Emotion.backgroundColor(/* `rgba */[
+              -878128972,
+              /* tuple */[
+                255,
+                137,
+                32,
+                0.18
+              ]
+            ]),
+        /* :: */[
+          Emotion.margin(/* zero */-789508312),
+          /* :: */[
+            Emotion.listStyleType(/* none */-922086728),
+            /* :: */[
+              Emotion.padding(/* `px */[
+                    25096,
+                    10
+                  ]),
+              /* [] */0
+            ]
+          ]
+        ]
+      ]
+    ]);
+
 export {
   hexRed ,
   container ,
@@ -159,6 +198,8 @@ export {
   title ,
   subTitle ,
   button ,
+  jobsList ,
+  job ,
   
 }
 /* container Not a pure module */
