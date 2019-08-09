@@ -25,7 +25,30 @@ Open your browser with port 3000, `http://localhost:3000`
 
 ## Frontend:
 
-Frontend is using ReasonReact / ReasonML
+Frontend is using ReasonReact / ReasonML.
+
+Frontend has a type system to encode and decode to backend database which is using Atdgen, this will also make sure that we write proper types for our data. Atdgen can be installed by oCaml package manager `opam`.
+
+install oCaml id you don't have yet.
+
+```
+brew install ocaml
+```
+now setup the ocaml
+
+```
+opam init -a
+opam switch create . 4.07.1 -y
+```
+and using opam to install atd and atdgen
+
+```
+opam pin add atd --dev-repo   
+opam pin add atdgen --dev-repo
+```
+at this point you should be able to see your atdgen version `atdgen --version`, if you don't probably you need to set your enviroment to opam `eval (opam env)` and try again.
+
+and try to run `yarn build:types` this will build type system which we use to decode and encode.
 
 ## Backend:
 
