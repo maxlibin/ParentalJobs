@@ -13,6 +13,7 @@ const Schema = mongoose.Schema;
 
 const Job = new Schema({
   company: String,
+  logoUrl: String,
   jobTitle: String,
   jobId: String,
   address: String,

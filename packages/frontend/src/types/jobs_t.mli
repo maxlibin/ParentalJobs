@@ -1,11 +1,7 @@
 (* Auto-generated from "jobs.atd" *)
               [@@@ocaml.warning "-27-32-35-39"]
 
-type salary = {
-  salaryFrom: string;
-  salaryTo: string;
-  salaryType: string option
-}
+type salary = { salaryFrom: string; salaryTo: string; salaryType: string }
 
 type job = {
   company: string;

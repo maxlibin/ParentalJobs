@@ -4,7 +4,7 @@
 type salary = Jobs_t.salary = {
   salaryFrom: string;
   salaryTo: string;
-  salaryType: string option
+  salaryType: string
 }
 
 type job = Jobs_t.job = {
@@ -24,16 +24,6 @@ type job = Jobs_t.job = {
 
 type jobs = Jobs_t.jobs
 
-let write__1 = (
-  Atdgen_codec_runtime.Encode.option_as_constr (
-    Atdgen_codec_runtime.Encode.string
-  )
-)
-let read__1 = (
-  Atdgen_codec_runtime.Decode.option_as_constr (
-    Atdgen_codec_runtime.Decode.string
-  )
-)
 let write_salary = (
   Atdgen_codec_runtime.Encode.make (fun (t : salary) ->
     (
@@ -55,7 +45,7 @@ let write_salary = (
         ;
           Atdgen_codec_runtime.Encode.field
             (
-            write__1
+            Atdgen_codec_runtime.Encode.string
             )
           ~name:"salaryType"
           t.salaryType
@@ -82,7 +72,7 @@ let read_salary = (
           salaryType =
             Atdgen_codec_runtime.Decode.decode
             (
-              read__1
+              Atdgen_codec_runtime.Decode.string
               |> Atdgen_codec_runtime.Decode.field "salaryType"
             ) json;
       } : salary)
@@ -261,19 +251,19 @@ let read_job = (
     )
   )
 )
-let write__2 = (
+let write__1 = (
   Atdgen_codec_runtime.Encode.list (
     write_job
   )
 )
-let read__2 = (
+let read__1 = (
   Atdgen_codec_runtime.Decode.list (
     read_job
   )
 )
 let write_jobs = (
-  write__2
+  write__1
 )
 let read_jobs = (
-  read__2
+  read__1
 )

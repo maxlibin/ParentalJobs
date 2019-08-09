@@ -2,23 +2,13 @@
 
 import * as Atdgen_codec_runtime from "@ahrefs/bs-atdgen-codec-runtime/src/atdgen_codec_runtime.bs.js";
 
-var partial_arg = Atdgen_codec_runtime.Encode[/* string */3];
-
-var partial_arg$1 = Atdgen_codec_runtime.Encode[/* option_as_constr */23];
-
-function write__1(param) {
-  return partial_arg$1(partial_arg, param);
-}
-
-var read__1 = Atdgen_codec_runtime.Decode[/* option_as_constr */25](Atdgen_codec_runtime.Decode[/* string */7]);
-
 var write_salary = Atdgen_codec_runtime.Encode[/* make */0]((function (t) {
         return Atdgen_codec_runtime.Encode[/* obj */14](/* :: */[
                     Atdgen_codec_runtime.Encode[/* field */12](undefined, Atdgen_codec_runtime.Encode[/* string */3], "salaryFrom", t[/* salaryFrom */0]),
                     /* :: */[
                       Atdgen_codec_runtime.Encode[/* field */12](undefined, Atdgen_codec_runtime.Encode[/* string */3], "salaryTo", t[/* salaryTo */1]),
                       /* :: */[
-                        Atdgen_codec_runtime.Encode[/* field */12](undefined, write__1, "salaryType", t[/* salaryType */2]),
+                        Atdgen_codec_runtime.Encode[/* field */12](undefined, Atdgen_codec_runtime.Encode[/* string */3], "salaryType", t[/* salaryType */2]),
                         /* [] */0
                       ]
                     ]
@@ -30,7 +20,8 @@ var read_salary = Atdgen_codec_runtime.Decode[/* make */0]((function (json) {
         var partial_arg$1 = Atdgen_codec_runtime.Decode[/* field */15];
         var partial_arg$2 = Atdgen_codec_runtime.Decode[/* string */7];
         var partial_arg$3 = Atdgen_codec_runtime.Decode[/* field */15];
-        var partial_arg$4 = Atdgen_codec_runtime.Decode[/* field */15];
+        var partial_arg$4 = Atdgen_codec_runtime.Decode[/* string */7];
+        var partial_arg$5 = Atdgen_codec_runtime.Decode[/* field */15];
         return /* record */[
                 /* salaryFrom */Atdgen_codec_runtime.Decode[/* decode */1]((function (param) {
                         return partial_arg$1("salaryFrom", partial_arg, param);
@@ -39,7 +30,7 @@ var read_salary = Atdgen_codec_runtime.Decode[/* make */0]((function (json) {
                         return partial_arg$3("salaryTo", partial_arg$2, param);
                       }), json),
                 /* salaryType */Atdgen_codec_runtime.Decode[/* decode */1]((function (param) {
-                        return partial_arg$4("salaryType", read__1, param);
+                        return partial_arg$5("salaryType", partial_arg$4, param);
                       }), json)
               ];
       }));
@@ -148,21 +139,21 @@ var read_job = Atdgen_codec_runtime.Decode[/* make */0]((function (json) {
               ];
       }));
 
-var partial_arg$2 = Atdgen_codec_runtime.Encode[/* list */8];
+var partial_arg = Atdgen_codec_runtime.Encode[/* list */8];
 
-function write__2(param) {
-  return partial_arg$2(write_job, param);
+function write__1(param) {
+  return partial_arg(write_job, param);
 }
 
-var partial_arg$3 = Atdgen_codec_runtime.Decode[/* list */11];
+var partial_arg$1 = Atdgen_codec_runtime.Decode[/* list */11];
 
-function read__2(param) {
-  return partial_arg$3(read_job, param);
+function read__1(param) {
+  return partial_arg$1(read_job, param);
 }
 
-var read_jobs = read__2;
+var read_jobs = read__1;
 
-var write_jobs = write__2;
+var write_jobs = write__1;
 
 export {
   read_salary ,
@@ -173,4 +164,4 @@ export {
   write_jobs ,
   
 }
-/* read__1 Not a pure module */
+/* write_salary Not a pure module */

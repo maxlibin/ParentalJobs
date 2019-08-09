@@ -24,7 +24,8 @@ let defaultUrl = page =>
         For now just try to grab data first.
     */
     return {
-      company: $("div[data-cy='company-hire-info__company']").text(),
+      company: $("p[data-cy='company-hire-info__company']").text(),
+      logoUrl: $("div[data-cy='companyinfo-logo img']").attr("src"),
       jobTitle: $("#job_title").text(),
       jobId: $("div[data-cy='info__jobpostid--span']").text(),
       address: $("#address a").text(),

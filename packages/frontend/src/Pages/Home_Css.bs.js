@@ -157,7 +157,7 @@ var jobsList = Emotion.css(undefined, /* :: */[
       /* :: */[
         Emotion.marginTop(/* `px */[
               25096,
-              30
+              60
             ]),
         /* [] */0
       ]
@@ -169,10 +169,10 @@ var job = Emotion.css(undefined, /* :: */[
         Emotion.backgroundColor(/* `rgba */[
               -878128972,
               /* tuple */[
-                255,
-                137,
-                32,
-                0.18
+                3,
+                3,
+                3,
+                0.02
               ]
             ]),
         /* :: */[
@@ -182,9 +182,187 @@ var job = Emotion.css(undefined, /* :: */[
             /* :: */[
               Emotion.padding(/* `px */[
                     25096,
-                    10
+                    20
+                  ]),
+              /* :: */[
+                Emotion.marginBottom(/* `px */[
+                      25096,
+                      20
+                    ]),
+                /* :: */[
+                  Emotion.borderLeft(/* `px */[
+                        25096,
+                        5
+                      ], /* solid */12956715, /* `hex */[
+                        5194459,
+                        "d4d4d4"
+                      ]),
+                  /* :: */[
+                    Emotion.display(/* flex */-1010954439),
+                    /* :: */[
+                      Emotion.alignItems(/* center */98248149),
+                      /* :: */[
+                        Emotion.position(/* relative */903134412),
+                        /* :: */[
+                          Emotion.hover(/* :: */[
+                                Emotion.backgroundColor(/* `rgba */[
+                                      -878128972,
+                                      /* tuple */[
+                                        3,
+                                        3,
+                                        3,
+                                        0.04
+                                      ]
+                                    ]),
+                                /* :: */[
+                                  Emotion.cursor(/* pointer */-786317123),
+                                  /* [] */0
+                                ]
+                              ]),
+                          /* [] */0
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    ]);
+
+var parentFriendlyjob = Emotion.css(undefined, /* :: */[
+      Emotion.label("parentFriendlyjob"),
+      /* :: */[
+        Emotion.backgroundColor(/* `rgba */[
+              -878128972,
+              /* tuple */[
+                255,
+                137,
+                32,
+                0.18
+              ]
+            ]),
+        /* [] */0
+      ]
+    ]);
+
+var company = Emotion.css(undefined, /* :: */[
+      Emotion.label("company"),
+      /* :: */[
+        Emotion.display(/* block */888960333),
+        /* :: */[
+          Emotion.fontSize(/* `px */[
+                25096,
+                16
+              ]),
+          /* :: */[
+            Emotion.marginBottom(/* `px */[
+                  25096,
+                  8
+                ]),
+            /* [] */0
+          ]
+        ]
+      ]
+    ]);
+
+var jobTitle = Emotion.css(undefined, /* :: */[
+      Emotion.label("jobTitle"),
+      /* :: */[
+        Emotion.display(/* block */888960333),
+        /* :: */[
+          Emotion.fontSize(/* `px */[
+                25096,
+                24
+              ]),
+          /* :: */[
+            Emotion.marginBottom(/* `px */[
+                  25096,
+                  12
+                ]),
+            /* [] */0
+          ]
+        ]
+      ]
+    ]);
+
+var category = Emotion.css(undefined, /* :: */[
+      Emotion.label("category"),
+      /* :: */[
+        Emotion.fontStyle(/* normal */812216871),
+        /* [] */0
+      ]
+    ]);
+
+var employmentType = Emotion.css(undefined, /* :: */[
+      Emotion.label("employmentType"),
+      /* :: */[
+        Emotion.marginLeft(/* auto */-1065951377),
+        /* :: */[
+          Emotion.fontSize(/* `px */[
+                25096,
+                16
+              ]),
+          /* :: */[
+            Emotion.fontWeight(700),
+            /* :: */[
+              Emotion.marginRight(/* `px */[
+                    25096,
+                    50
                   ]),
               /* [] */0
+            ]
+          ]
+        ]
+      ]
+    ]);
+
+var avatar = Emotion.css(undefined, /* :: */[
+      Emotion.label("avatar"),
+      /* :: */[
+        Emotion.display(/* block */888960333),
+        /* :: */[
+          Emotion.position(/* absolute */-1013592457),
+          /* :: */[
+            Emotion.width(/* `px */[
+                  25096,
+                  60
+                ]),
+            /* :: */[
+              Emotion.height(/* `px */[
+                    25096,
+                    60
+                  ]),
+              /* :: */[
+                Emotion.border(/* `px */[
+                      25096,
+                      1
+                    ], /* solid */12956715, /* `hex */[
+                      5194459,
+                      "333"
+                    ]),
+                /* :: */[
+                  Emotion.backgroundColor(/* `hex */[
+                        5194459,
+                        "f3f3f3"
+                      ]),
+                  /* :: */[
+                    Emotion.borderRadius(/* `pct */[
+                          5591841,
+                          50
+                        ]),
+                    /* :: */[
+                      Emotion.right(/* `px */[
+                            25096,
+                            -30
+                          ]),
+                      /* [] */0
+                    ]
+                  ]
+                ]
+              ]
             ]
           ]
         ]
@@ -200,6 +378,12 @@ export {
   button ,
   jobsList ,
   job ,
+  parentFriendlyjob ,
+  company ,
+  jobTitle ,
+  category ,
+  employmentType ,
+  avatar ,
   
 }
 /* container Not a pure module */

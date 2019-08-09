@@ -1,11 +1,20 @@
 open Prelude;
-
 module Css = Home_Css;
+
+type state =
+  | Loading
+  | Loaded(Jobs_bs.jobs);
 
 [@react.component]
 let make = () => {
+  let (jobs, setJobs) = React.useState(() => Loading);
+
   React.useEffect0(() => {
-    Api.Jobs.latest(Js.log)->ignore;
+    Js.Promise.(
+      Api.Jobs.latest(Atdgen_codec_runtime.Decode.decode(Jobs_bs.read_jobs))
+      |> then_(res => setJobs(_ => Loaded(res))->resolve)
+    )
+    ->ignore;
     None;
   });
 
@@ -24,7 +33,30 @@ let make = () => {
       </div>
     </div>
     <div className={Cn.make(["container", Css.jobsList])}>
-      <ul> <li className=Css.job> ""->s </li> </ul>
+      {switch (jobs) {
+       | Loading => "Loading..."->s
+       | Loaded(jobs) =>
+         <ul>
+           {jobs
+            ->List.mapWithIndex(
+                (index, {company, jobTitle, employmentType, jobCategories}) =>
+                <li key={index->string_of_int} className=Css.job>
+                  <span className=Css.avatar />
+                  <div>
+                    <span className=Css.company> company->s </span>
+                    <h3 className=Css.jobTitle> jobTitle->s </h3>
+                    <cite className=Css.category>
+                      <span> jobCategories->s </span>
+                    </cite>
+                  </div>
+                  <div className=Css.employmentType>
+                    <span> employmentType->s </span>
+                  </div>
+                </li>
+              )
+            ->RR.list}
+         </ul>
+       }}
     </div>
   </>;
 };

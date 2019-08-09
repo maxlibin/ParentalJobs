@@ -4,7 +4,7 @@
 type salary = Jobs_t.salary = {
   salaryFrom: string;
   salaryTo: string;
-  salaryType: string option
+  salaryType: string
 }
 
 type job = Jobs_t.job = {

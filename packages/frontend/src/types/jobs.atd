@@ -1,7 +1,7 @@
 type salary = {
   salaryFrom: string;
   salaryTo: string;
-  salaryType: string option;
+  salaryType: string;
 }
 
 type job = {

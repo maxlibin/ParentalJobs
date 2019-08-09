@@ -43,12 +43,60 @@ let button = [%css [
 ]]
 
 let jobsList = [%css [
-  marginTop (`px 30);
+  marginTop (`px 60);
 ]]
 
 let job = [%css [
-  backgroundColor (`rgba(255, 137, 32, 0.18));
+  backgroundColor (`rgba(3, 3, 3, 0.02));
   margin `zero;
   listStyleType `none;
-  padding (`px 10);
+  padding (`px 20);
+  marginBottom (`px 20);
+  borderLeft (`px 5) `solid (`hex "d4d4d4");
+  display `flex;
+  alignItems `center;
+  position `relative;
+
+  hover [
+    backgroundColor (`rgba(3, 3, 3, 0.04));
+    cursor `pointer;
+  ]
+]]
+
+let parentFriendlyjob = [%css [
+  backgroundColor (`rgba(255, 137, 32, 0.18));
+]]
+
+let company =  [%css [
+  display `block;
+  fontSize (`px 16);
+  marginBottom (`px 8);
+]]
+
+let jobTitle = [%css [
+  display `block;
+  fontSize (`px 24);
+  marginBottom (`px 12);
+]]
+
+let category = [%css [
+  fontStyle `normal;
+]]
+
+let employmentType = [%css [
+  marginLeft `auto;
+  fontSize (`px 16);
+  fontWeight 700;
+  marginRight (`px 50);
+]]
+
+let avatar = [%css [
+  display `block;
+  position `absolute;
+  width (`px 60);
+  height (`px 60);
+  border (`px 1) `solid (`hex "333");
+  backgroundColor (`hex "f3f3f3");
+  borderRadius (`pct 50.);
+  right (`px ~-30);
 ]]
