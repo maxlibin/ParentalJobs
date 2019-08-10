@@ -326,44 +326,11 @@ var avatar = Emotion.css(undefined, /* :: */[
         /* :: */[
           Emotion.position(/* absolute */-1013592457),
           /* :: */[
-            Emotion.width(/* `px */[
+            Emotion.right(/* `px */[
                   25096,
-                  60
+                  -30
                 ]),
-            /* :: */[
-              Emotion.height(/* `px */[
-                    25096,
-                    60
-                  ]),
-              /* :: */[
-                Emotion.border(/* `px */[
-                      25096,
-                      1
-                    ], /* solid */12956715, /* `hex */[
-                      5194459,
-                      "333"
-                    ]),
-                /* :: */[
-                  Emotion.backgroundColor(/* `hex */[
-                        5194459,
-                        "f3f3f3"
-                      ]),
-                  /* :: */[
-                    Emotion.borderRadius(/* `pct */[
-                          5591841,
-                          50
-                        ]),
-                    /* :: */[
-                      Emotion.right(/* `px */[
-                            25096,
-                            -30
-                          ]),
-                      /* [] */0
-                    ]
-                  ]
-                ]
-              ]
-            ]
+            /* [] */0
           ]
         ]
       ]

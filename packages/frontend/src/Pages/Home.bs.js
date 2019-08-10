@@ -5,6 +5,7 @@ import * as Curry from "bs-platform/lib/es6/curry.js";
 import * as React from "react";
 import * as Belt_List from "bs-platform/lib/es6/belt_List.js";
 import * as Api$Tripdeer from "../helpers/Api.bs.js";
+import * as Avatar$Tripdeer from "../components/Avatar.bs.js";
 import * as Jobs_bs$Tripdeer from "../types/jobs_bs.bs.js";
 import * as Prelude$Tripdeer from "../helpers/Prelude.bs.js";
 import * as Home_Css$Tripdeer from "./Home_Css.bs.js";
@@ -48,14 +49,16 @@ function Home(Props) {
                         ]
                       ])
                 }, jobs ? React.createElement("ul", undefined, Prelude$Tripdeer.RR[/* list */9](Belt_List.mapWithIndex(jobs[0], (function (index, param) {
+                                  var company = param[/* company */0];
                                   return React.createElement("li", {
                                               key: String(index),
                                               className: Home_Css$Tripdeer.job
-                                            }, React.createElement("span", {
-                                                  className: Home_Css$Tripdeer.avatar
+                                            }, React.createElement(Avatar$Tripdeer.make, {
+                                                  className: Home_Css$Tripdeer.avatar,
+                                                  company: company
                                                 }), React.createElement("div", undefined, React.createElement("span", {
                                                       className: Home_Css$Tripdeer.company
-                                                    }, Prelude$Tripdeer.s(param[/* company */0])), React.createElement("h3", {
+                                                    }, Prelude$Tripdeer.s(company)), React.createElement("h3", {
                                                       className: Home_Css$Tripdeer.jobTitle
                                                     }, Prelude$Tripdeer.s(param[/* jobTitle */1])), React.createElement("cite", {
                                                       className: Home_Css$Tripdeer.category

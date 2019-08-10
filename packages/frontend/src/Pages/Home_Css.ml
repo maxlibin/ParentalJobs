@@ -93,10 +93,5 @@ let employmentType = [%css [
 let avatar = [%css [
   display `block;
   position `absolute;
-  width (`px 60);
-  height (`px 60);
-  border (`px 1) `solid (`hex "333");
-  backgroundColor (`hex "f3f3f3");
-  borderRadius (`pct 50.);
   right (`px ~-30);
 ]]

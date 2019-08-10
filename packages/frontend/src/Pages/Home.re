@@ -41,7 +41,7 @@ let make = () => {
             ->List.mapWithIndex(
                 (index, {company, jobTitle, employmentType, jobCategories}) =>
                 <li key={index->string_of_int} className=Css.job>
-                  <span className=Css.avatar />
+                  <Avatar className=Css.avatar company />
                   <div>
                     <span className=Css.company> company->s </span>
                     <h3 className=Css.jobTitle> jobTitle->s </h3>
