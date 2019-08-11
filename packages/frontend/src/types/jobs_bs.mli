@@ -7,7 +7,22 @@ type salary = Jobs_t.salary = {
   salaryType: string
 }
 
+type latestJob = Jobs_t.latestJob = {
+  _id: string;
+  company: string;
+  jobTitle: string;
+  employmentType: string;
+  seniority: string;
+  minExperience: string;
+  jobCategories: string;
+  salary: salary;
+  postedOn: string
+}
+
+type latestJobs = Jobs_t.latestJobs
+
 type job = Jobs_t.job = {
+  _id: string;
   company: string;
   jobTitle: string;
   jobId: string;
@@ -27,6 +42,14 @@ type jobs = Jobs_t.jobs
 val read_salary :  salary Atdgen_codec_runtime.Decode.t
 
 val write_salary :  salary Atdgen_codec_runtime.Encode.t
+
+val read_latestJob :  latestJob Atdgen_codec_runtime.Decode.t
+
+val write_latestJob :  latestJob Atdgen_codec_runtime.Encode.t
+
+val read_latestJobs :  latestJobs Atdgen_codec_runtime.Decode.t
+
+val write_latestJobs :  latestJobs Atdgen_codec_runtime.Encode.t
 
 val read_job :  job Atdgen_codec_runtime.Decode.t
 

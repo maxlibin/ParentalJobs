@@ -5,6 +5,7 @@ type salary = {
 }
 
 type job = {
+  _id: string;
   company: string;
   jobTitle: string;
   jobId: string;
@@ -19,4 +20,17 @@ type job = {
   requirement: string;
 }
 
+type latestJob = {
+  _id: string;
+  company: string;
+  jobTitle: string;
+  employmentType: string;
+  seniority: string;
+  minExperience: string;
+  jobCategories: string;
+  salary: salary;
+  postedOn: string;
+}
+
 type jobs = job list
+type latestJobs = latestJob list

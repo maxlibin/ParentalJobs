@@ -6,6 +6,9 @@ module RR = {
 
 let s = RR.string;
 
+[@bs.send]
+external stringOfPromiseError: Js.Promise.error => string = "toString";
+
 module Router = {
   type t =
     | Home
@@ -27,4 +30,9 @@ module Router = {
     | Job(_) => "job"
     | Home => "home"
     | _ => "NotFound";
+};
+
+let linkTo = (path, event) => {
+  event->ReactEvent.Mouse.preventDefault;
+  path->ReasonReactRouter.push;
 };

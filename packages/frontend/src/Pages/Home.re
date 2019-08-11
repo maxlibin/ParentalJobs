@@ -3,7 +3,8 @@ module Css = Home_Css;
 
 type state =
   | Loading
-  | Loaded(Jobs_bs.jobs);
+  | Loaded(Jobs_bs.latestJobs)
+  | Error(Js.Promise.error);
 
 [@react.component]
 let make = () => {
@@ -11,8 +12,11 @@ let make = () => {
 
   React.useEffect0(() => {
     Js.Promise.(
-      Api.Jobs.latest(Atdgen_codec_runtime.Decode.decode(Jobs_bs.read_jobs))
+      Api.Jobs.latest(
+        Atdgen_codec_runtime.Decode.decode(Jobs_bs.read_latestJobs),
+      )
       |> then_(res => setJobs(_ => Loaded(res))->resolve)
+      |> catch(err => setJobs(_ => Error(err))->resolve)
     )
     ->ignore;
     None;
@@ -35,12 +39,24 @@ let make = () => {
     <div className={Cn.make(["container", Css.jobsList])}>
       {switch (jobs) {
        | Loading => "Loading..."->s
+       | Error(err) => err->stringOfPromiseError->s
        | Loaded(jobs) =>
          <ul>
            {jobs
-            ->List.mapWithIndex(
-                (index, {company, jobTitle, employmentType, jobCategories}) =>
-                <li key={index->string_of_int} className=Css.job>
+            ->List.map(
+                (
+                  {
+                    _id as id,
+                    company,
+                    jobTitle,
+                    employmentType,
+                    jobCategories,
+                  },
+                ) =>
+                <li
+                  key=id
+                  className=Css.job
+                  onClick={event => {j|/job/$id|j}->linkTo(event)}>
                   <Avatar className=Css.avatar company />
                   <div>
                     <span className=Css.company> company->s </span>

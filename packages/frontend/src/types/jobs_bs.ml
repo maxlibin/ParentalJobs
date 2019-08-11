@@ -7,7 +7,22 @@ type salary = Jobs_t.salary = {
   salaryType: string
 }
 
+type latestJob = Jobs_t.latestJob = {
+  _id: string;
+  company: string;
+  jobTitle: string;
+  employmentType: string;
+  seniority: string;
+  minExperience: string;
+  jobCategories: string;
+  salary: salary;
+  postedOn: string
+}
+
+type latestJobs = Jobs_t.latestJobs
+
 type job = Jobs_t.job = {
+  _id: string;
   company: string;
   jobTitle: string;
   jobId: string;
@@ -79,11 +94,167 @@ let read_salary = (
     )
   )
 )
+let write_latestJob = (
+  Atdgen_codec_runtime.Encode.make (fun (t : latestJob) ->
+    (
+    Atdgen_codec_runtime.Encode.obj
+      [
+          Atdgen_codec_runtime.Encode.field
+            (
+            Atdgen_codec_runtime.Encode.string
+            )
+          ~name:"_id"
+          t._id
+        ;
+          Atdgen_codec_runtime.Encode.field
+            (
+            Atdgen_codec_runtime.Encode.string
+            )
+          ~name:"company"
+          t.company
+        ;
+          Atdgen_codec_runtime.Encode.field
+            (
+            Atdgen_codec_runtime.Encode.string
+            )
+          ~name:"jobTitle"
+          t.jobTitle
+        ;
+          Atdgen_codec_runtime.Encode.field
+            (
+            Atdgen_codec_runtime.Encode.string
+            )
+          ~name:"employmentType"
+          t.employmentType
+        ;
+          Atdgen_codec_runtime.Encode.field
+            (
+            Atdgen_codec_runtime.Encode.string
+            )
+          ~name:"seniority"
+          t.seniority
+        ;
+          Atdgen_codec_runtime.Encode.field
+            (
+            Atdgen_codec_runtime.Encode.string
+            )
+          ~name:"minExperience"
+          t.minExperience
+        ;
+          Atdgen_codec_runtime.Encode.field
+            (
+            Atdgen_codec_runtime.Encode.string
+            )
+          ~name:"jobCategories"
+          t.jobCategories
+        ;
+          Atdgen_codec_runtime.Encode.field
+            (
+            write_salary
+            )
+          ~name:"salary"
+          t.salary
+        ;
+          Atdgen_codec_runtime.Encode.field
+            (
+            Atdgen_codec_runtime.Encode.string
+            )
+          ~name:"postedOn"
+          t.postedOn
+      ]
+    )
+  )
+)
+let read_latestJob = (
+  Atdgen_codec_runtime.Decode.make (fun json ->
+    (
+      ({
+          _id =
+            Atdgen_codec_runtime.Decode.decode
+            (
+              Atdgen_codec_runtime.Decode.string
+              |> Atdgen_codec_runtime.Decode.field "_id"
+            ) json;
+          company =
+            Atdgen_codec_runtime.Decode.decode
+            (
+              Atdgen_codec_runtime.Decode.string
+              |> Atdgen_codec_runtime.Decode.field "company"
+            ) json;
+          jobTitle =
+            Atdgen_codec_runtime.Decode.decode
+            (
+              Atdgen_codec_runtime.Decode.string
+              |> Atdgen_codec_runtime.Decode.field "jobTitle"
+            ) json;
+          employmentType =
+            Atdgen_codec_runtime.Decode.decode
+            (
+              Atdgen_codec_runtime.Decode.string
+              |> Atdgen_codec_runtime.Decode.field "employmentType"
+            ) json;
+          seniority =
+            Atdgen_codec_runtime.Decode.decode
+            (
+              Atdgen_codec_runtime.Decode.string
+              |> Atdgen_codec_runtime.Decode.field "seniority"
+            ) json;
+          minExperience =
+            Atdgen_codec_runtime.Decode.decode
+            (
+              Atdgen_codec_runtime.Decode.string
+              |> Atdgen_codec_runtime.Decode.field "minExperience"
+            ) json;
+          jobCategories =
+            Atdgen_codec_runtime.Decode.decode
+            (
+              Atdgen_codec_runtime.Decode.string
+              |> Atdgen_codec_runtime.Decode.field "jobCategories"
+            ) json;
+          salary =
+            Atdgen_codec_runtime.Decode.decode
+            (
+              read_salary
+              |> Atdgen_codec_runtime.Decode.field "salary"
+            ) json;
+          postedOn =
+            Atdgen_codec_runtime.Decode.decode
+            (
+              Atdgen_codec_runtime.Decode.string
+              |> Atdgen_codec_runtime.Decode.field "postedOn"
+            ) json;
+      } : latestJob)
+    )
+  )
+)
+let write__2 = (
+  Atdgen_codec_runtime.Encode.list (
+    write_latestJob
+  )
+)
+let read__2 = (
+  Atdgen_codec_runtime.Decode.list (
+    read_latestJob
+  )
+)
+let write_latestJobs = (
+  write__2
+)
+let read_latestJobs = (
+  read__2
+)
 let write_job = (
   Atdgen_codec_runtime.Encode.make (fun (t : job) ->
     (
     Atdgen_codec_runtime.Encode.obj
       [
+          Atdgen_codec_runtime.Encode.field
+            (
+            Atdgen_codec_runtime.Encode.string
+            )
+          ~name:"_id"
+          t._id
+        ;
           Atdgen_codec_runtime.Encode.field
             (
             Atdgen_codec_runtime.Encode.string
@@ -175,6 +346,12 @@ let read_job = (
   Atdgen_codec_runtime.Decode.make (fun json ->
     (
       ({
+          _id =
+            Atdgen_codec_runtime.Decode.decode
+            (
+              Atdgen_codec_runtime.Decode.string
+              |> Atdgen_codec_runtime.Decode.field "_id"
+            ) json;
           company =
             Atdgen_codec_runtime.Decode.decode
             (

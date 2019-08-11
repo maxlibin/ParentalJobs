@@ -35,32 +35,127 @@ var read_salary = Atdgen_codec_runtime.Decode[/* make */0]((function (json) {
               ];
       }));
 
+var write_latestJob = Atdgen_codec_runtime.Encode[/* make */0]((function (t) {
+        return Atdgen_codec_runtime.Encode[/* obj */14](/* :: */[
+                    Atdgen_codec_runtime.Encode[/* field */12](undefined, Atdgen_codec_runtime.Encode[/* string */3], "_id", t[/* _id */0]),
+                    /* :: */[
+                      Atdgen_codec_runtime.Encode[/* field */12](undefined, Atdgen_codec_runtime.Encode[/* string */3], "company", t[/* company */1]),
+                      /* :: */[
+                        Atdgen_codec_runtime.Encode[/* field */12](undefined, Atdgen_codec_runtime.Encode[/* string */3], "jobTitle", t[/* jobTitle */2]),
+                        /* :: */[
+                          Atdgen_codec_runtime.Encode[/* field */12](undefined, Atdgen_codec_runtime.Encode[/* string */3], "employmentType", t[/* employmentType */3]),
+                          /* :: */[
+                            Atdgen_codec_runtime.Encode[/* field */12](undefined, Atdgen_codec_runtime.Encode[/* string */3], "seniority", t[/* seniority */4]),
+                            /* :: */[
+                              Atdgen_codec_runtime.Encode[/* field */12](undefined, Atdgen_codec_runtime.Encode[/* string */3], "minExperience", t[/* minExperience */5]),
+                              /* :: */[
+                                Atdgen_codec_runtime.Encode[/* field */12](undefined, Atdgen_codec_runtime.Encode[/* string */3], "jobCategories", t[/* jobCategories */6]),
+                                /* :: */[
+                                  Atdgen_codec_runtime.Encode[/* field */12](undefined, write_salary, "salary", t[/* salary */7]),
+                                  /* :: */[
+                                    Atdgen_codec_runtime.Encode[/* field */12](undefined, Atdgen_codec_runtime.Encode[/* string */3], "postedOn", t[/* postedOn */8]),
+                                    /* [] */0
+                                  ]
+                                ]
+                              ]
+                            ]
+                          ]
+                        ]
+                      ]
+                    ]
+                  ]);
+      }));
+
+var read_latestJob = Atdgen_codec_runtime.Decode[/* make */0]((function (json) {
+        var partial_arg = Atdgen_codec_runtime.Decode[/* string */7];
+        var partial_arg$1 = Atdgen_codec_runtime.Decode[/* field */15];
+        var partial_arg$2 = Atdgen_codec_runtime.Decode[/* string */7];
+        var partial_arg$3 = Atdgen_codec_runtime.Decode[/* field */15];
+        var partial_arg$4 = Atdgen_codec_runtime.Decode[/* string */7];
+        var partial_arg$5 = Atdgen_codec_runtime.Decode[/* field */15];
+        var partial_arg$6 = Atdgen_codec_runtime.Decode[/* string */7];
+        var partial_arg$7 = Atdgen_codec_runtime.Decode[/* field */15];
+        var partial_arg$8 = Atdgen_codec_runtime.Decode[/* string */7];
+        var partial_arg$9 = Atdgen_codec_runtime.Decode[/* field */15];
+        var partial_arg$10 = Atdgen_codec_runtime.Decode[/* string */7];
+        var partial_arg$11 = Atdgen_codec_runtime.Decode[/* field */15];
+        var partial_arg$12 = Atdgen_codec_runtime.Decode[/* string */7];
+        var partial_arg$13 = Atdgen_codec_runtime.Decode[/* field */15];
+        var partial_arg$14 = Atdgen_codec_runtime.Decode[/* field */15];
+        var partial_arg$15 = Atdgen_codec_runtime.Decode[/* string */7];
+        var partial_arg$16 = Atdgen_codec_runtime.Decode[/* field */15];
+        return /* record */[
+                /* _id */Atdgen_codec_runtime.Decode[/* decode */1]((function (param) {
+                        return partial_arg$1("_id", partial_arg, param);
+                      }), json),
+                /* company */Atdgen_codec_runtime.Decode[/* decode */1]((function (param) {
+                        return partial_arg$3("company", partial_arg$2, param);
+                      }), json),
+                /* jobTitle */Atdgen_codec_runtime.Decode[/* decode */1]((function (param) {
+                        return partial_arg$5("jobTitle", partial_arg$4, param);
+                      }), json),
+                /* employmentType */Atdgen_codec_runtime.Decode[/* decode */1]((function (param) {
+                        return partial_arg$7("employmentType", partial_arg$6, param);
+                      }), json),
+                /* seniority */Atdgen_codec_runtime.Decode[/* decode */1]((function (param) {
+                        return partial_arg$9("seniority", partial_arg$8, param);
+                      }), json),
+                /* minExperience */Atdgen_codec_runtime.Decode[/* decode */1]((function (param) {
+                        return partial_arg$11("minExperience", partial_arg$10, param);
+                      }), json),
+                /* jobCategories */Atdgen_codec_runtime.Decode[/* decode */1]((function (param) {
+                        return partial_arg$13("jobCategories", partial_arg$12, param);
+                      }), json),
+                /* salary */Atdgen_codec_runtime.Decode[/* decode */1]((function (param) {
+                        return partial_arg$14("salary", read_salary, param);
+                      }), json),
+                /* postedOn */Atdgen_codec_runtime.Decode[/* decode */1]((function (param) {
+                        return partial_arg$16("postedOn", partial_arg$15, param);
+                      }), json)
+              ];
+      }));
+
+var partial_arg = Atdgen_codec_runtime.Encode[/* list */8];
+
+function write__2(param) {
+  return partial_arg(write_latestJob, param);
+}
+
+var partial_arg$1 = Atdgen_codec_runtime.Decode[/* list */11];
+
+function read__2(param) {
+  return partial_arg$1(read_latestJob, param);
+}
+
 var write_job = Atdgen_codec_runtime.Encode[/* make */0]((function (t) {
         return Atdgen_codec_runtime.Encode[/* obj */14](/* :: */[
-                    Atdgen_codec_runtime.Encode[/* field */12](undefined, Atdgen_codec_runtime.Encode[/* string */3], "company", t[/* company */0]),
+                    Atdgen_codec_runtime.Encode[/* field */12](undefined, Atdgen_codec_runtime.Encode[/* string */3], "_id", t[/* _id */0]),
                     /* :: */[
-                      Atdgen_codec_runtime.Encode[/* field */12](undefined, Atdgen_codec_runtime.Encode[/* string */3], "jobTitle", t[/* jobTitle */1]),
+                      Atdgen_codec_runtime.Encode[/* field */12](undefined, Atdgen_codec_runtime.Encode[/* string */3], "company", t[/* company */1]),
                       /* :: */[
-                        Atdgen_codec_runtime.Encode[/* field */12](undefined, Atdgen_codec_runtime.Encode[/* string */3], "jobId", t[/* jobId */2]),
+                        Atdgen_codec_runtime.Encode[/* field */12](undefined, Atdgen_codec_runtime.Encode[/* string */3], "jobTitle", t[/* jobTitle */2]),
                         /* :: */[
-                          Atdgen_codec_runtime.Encode[/* field */12](undefined, Atdgen_codec_runtime.Encode[/* string */3], "address", t[/* address */3]),
+                          Atdgen_codec_runtime.Encode[/* field */12](undefined, Atdgen_codec_runtime.Encode[/* string */3], "jobId", t[/* jobId */3]),
                           /* :: */[
-                            Atdgen_codec_runtime.Encode[/* field */12](undefined, Atdgen_codec_runtime.Encode[/* string */3], "employmentType", t[/* employmentType */4]),
+                            Atdgen_codec_runtime.Encode[/* field */12](undefined, Atdgen_codec_runtime.Encode[/* string */3], "address", t[/* address */4]),
                             /* :: */[
-                              Atdgen_codec_runtime.Encode[/* field */12](undefined, Atdgen_codec_runtime.Encode[/* string */3], "seniority", t[/* seniority */5]),
+                              Atdgen_codec_runtime.Encode[/* field */12](undefined, Atdgen_codec_runtime.Encode[/* string */3], "employmentType", t[/* employmentType */5]),
                               /* :: */[
-                                Atdgen_codec_runtime.Encode[/* field */12](undefined, Atdgen_codec_runtime.Encode[/* string */3], "minExperience", t[/* minExperience */6]),
+                                Atdgen_codec_runtime.Encode[/* field */12](undefined, Atdgen_codec_runtime.Encode[/* string */3], "seniority", t[/* seniority */6]),
                                 /* :: */[
-                                  Atdgen_codec_runtime.Encode[/* field */12](undefined, Atdgen_codec_runtime.Encode[/* string */3], "jobCategories", t[/* jobCategories */7]),
+                                  Atdgen_codec_runtime.Encode[/* field */12](undefined, Atdgen_codec_runtime.Encode[/* string */3], "minExperience", t[/* minExperience */7]),
                                   /* :: */[
-                                    Atdgen_codec_runtime.Encode[/* field */12](undefined, write_salary, "salary", t[/* salary */8]),
+                                    Atdgen_codec_runtime.Encode[/* field */12](undefined, Atdgen_codec_runtime.Encode[/* string */3], "jobCategories", t[/* jobCategories */8]),
                                     /* :: */[
-                                      Atdgen_codec_runtime.Encode[/* field */12](undefined, Atdgen_codec_runtime.Encode[/* string */3], "postedOn", t[/* postedOn */9]),
+                                      Atdgen_codec_runtime.Encode[/* field */12](undefined, write_salary, "salary", t[/* salary */9]),
                                       /* :: */[
-                                        Atdgen_codec_runtime.Encode[/* field */12](undefined, Atdgen_codec_runtime.Encode[/* string */3], "jobDescription", t[/* jobDescription */10]),
+                                        Atdgen_codec_runtime.Encode[/* field */12](undefined, Atdgen_codec_runtime.Encode[/* string */3], "postedOn", t[/* postedOn */10]),
                                         /* :: */[
-                                          Atdgen_codec_runtime.Encode[/* field */12](undefined, Atdgen_codec_runtime.Encode[/* string */3], "requirement", t[/* requirement */11]),
-                                          /* [] */0
+                                          Atdgen_codec_runtime.Encode[/* field */12](undefined, Atdgen_codec_runtime.Encode[/* string */3], "jobDescription", t[/* jobDescription */11]),
+                                          /* :: */[
+                                            Atdgen_codec_runtime.Encode[/* field */12](undefined, Atdgen_codec_runtime.Encode[/* string */3], "requirement", t[/* requirement */12]),
+                                            /* [] */0
+                                          ]
                                         ]
                                       ]
                                     ]
@@ -92,64 +187,73 @@ var read_job = Atdgen_codec_runtime.Decode[/* make */0]((function (json) {
         var partial_arg$13 = Atdgen_codec_runtime.Decode[/* field */15];
         var partial_arg$14 = Atdgen_codec_runtime.Decode[/* string */7];
         var partial_arg$15 = Atdgen_codec_runtime.Decode[/* field */15];
-        var partial_arg$16 = Atdgen_codec_runtime.Decode[/* field */15];
-        var partial_arg$17 = Atdgen_codec_runtime.Decode[/* string */7];
+        var partial_arg$16 = Atdgen_codec_runtime.Decode[/* string */7];
+        var partial_arg$17 = Atdgen_codec_runtime.Decode[/* field */15];
         var partial_arg$18 = Atdgen_codec_runtime.Decode[/* field */15];
         var partial_arg$19 = Atdgen_codec_runtime.Decode[/* string */7];
         var partial_arg$20 = Atdgen_codec_runtime.Decode[/* field */15];
         var partial_arg$21 = Atdgen_codec_runtime.Decode[/* string */7];
         var partial_arg$22 = Atdgen_codec_runtime.Decode[/* field */15];
+        var partial_arg$23 = Atdgen_codec_runtime.Decode[/* string */7];
+        var partial_arg$24 = Atdgen_codec_runtime.Decode[/* field */15];
         return /* record */[
+                /* _id */Atdgen_codec_runtime.Decode[/* decode */1]((function (param) {
+                        return partial_arg$1("_id", partial_arg, param);
+                      }), json),
                 /* company */Atdgen_codec_runtime.Decode[/* decode */1]((function (param) {
-                        return partial_arg$1("company", partial_arg, param);
+                        return partial_arg$3("company", partial_arg$2, param);
                       }), json),
                 /* jobTitle */Atdgen_codec_runtime.Decode[/* decode */1]((function (param) {
-                        return partial_arg$3("jobTitle", partial_arg$2, param);
+                        return partial_arg$5("jobTitle", partial_arg$4, param);
                       }), json),
                 /* jobId */Atdgen_codec_runtime.Decode[/* decode */1]((function (param) {
-                        return partial_arg$5("jobId", partial_arg$4, param);
+                        return partial_arg$7("jobId", partial_arg$6, param);
                       }), json),
                 /* address */Atdgen_codec_runtime.Decode[/* decode */1]((function (param) {
-                        return partial_arg$7("address", partial_arg$6, param);
+                        return partial_arg$9("address", partial_arg$8, param);
                       }), json),
                 /* employmentType */Atdgen_codec_runtime.Decode[/* decode */1]((function (param) {
-                        return partial_arg$9("employmentType", partial_arg$8, param);
+                        return partial_arg$11("employmentType", partial_arg$10, param);
                       }), json),
                 /* seniority */Atdgen_codec_runtime.Decode[/* decode */1]((function (param) {
-                        return partial_arg$11("seniority", partial_arg$10, param);
+                        return partial_arg$13("seniority", partial_arg$12, param);
                       }), json),
                 /* minExperience */Atdgen_codec_runtime.Decode[/* decode */1]((function (param) {
-                        return partial_arg$13("minExperience", partial_arg$12, param);
+                        return partial_arg$15("minExperience", partial_arg$14, param);
                       }), json),
                 /* jobCategories */Atdgen_codec_runtime.Decode[/* decode */1]((function (param) {
-                        return partial_arg$15("jobCategories", partial_arg$14, param);
+                        return partial_arg$17("jobCategories", partial_arg$16, param);
                       }), json),
                 /* salary */Atdgen_codec_runtime.Decode[/* decode */1]((function (param) {
-                        return partial_arg$16("salary", read_salary, param);
+                        return partial_arg$18("salary", read_salary, param);
                       }), json),
                 /* postedOn */Atdgen_codec_runtime.Decode[/* decode */1]((function (param) {
-                        return partial_arg$18("postedOn", partial_arg$17, param);
+                        return partial_arg$20("postedOn", partial_arg$19, param);
                       }), json),
                 /* jobDescription */Atdgen_codec_runtime.Decode[/* decode */1]((function (param) {
-                        return partial_arg$20("jobDescription", partial_arg$19, param);
+                        return partial_arg$22("jobDescription", partial_arg$21, param);
                       }), json),
                 /* requirement */Atdgen_codec_runtime.Decode[/* decode */1]((function (param) {
-                        return partial_arg$22("requirement", partial_arg$21, param);
+                        return partial_arg$24("requirement", partial_arg$23, param);
                       }), json)
               ];
       }));
 
-var partial_arg = Atdgen_codec_runtime.Encode[/* list */8];
+var partial_arg$2 = Atdgen_codec_runtime.Encode[/* list */8];
 
 function write__1(param) {
-  return partial_arg(write_job, param);
+  return partial_arg$2(write_job, param);
 }
 
-var partial_arg$1 = Atdgen_codec_runtime.Decode[/* list */11];
+var partial_arg$3 = Atdgen_codec_runtime.Decode[/* list */11];
 
 function read__1(param) {
-  return partial_arg$1(read_job, param);
+  return partial_arg$3(read_job, param);
 }
+
+var read_latestJobs = read__2;
+
+var write_latestJobs = write__2;
 
 var read_jobs = read__1;
 
@@ -158,6 +262,10 @@ var write_jobs = write__1;
 export {
   read_salary ,
   write_salary ,
+  read_latestJob ,
+  write_latestJob ,
+  read_latestJobs ,
+  write_latestJobs ,
   read_job ,
   write_job ,
   read_jobs ,

@@ -13,7 +13,7 @@ let make = () => {
          | Home => <Home />
          | Jobs => <Jobs />
          | Job(id) => <Job id />
-         | NotFound => "Not Found"->s
+         | NotFound => <NotFound />
          }}
       </div>
     </div>

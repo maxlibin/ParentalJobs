@@ -17,7 +17,14 @@ function latest(decode) {
   return get("/api/jobs/latest", decode);
 }
 
-var Jobs = /* module */[/* latest */latest];
+function job(id, decode) {
+  return get("/api/job/" + (String(id) + ""), decode);
+}
+
+var Jobs = /* module */[
+  /* latest */latest,
+  /* job */job
+];
 
 export {
   Fetch$1 as Fetch,

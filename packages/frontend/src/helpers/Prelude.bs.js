@@ -2,6 +2,7 @@
 
 import * as Belt_List from "bs-platform/lib/es6/belt_List.js";
 import * as ReasonReact from "reason-react/src/ReasonReact.js";
+import * as ReasonReactRouter from "reason-react/src/ReasonReactRouter.js";
 
 var list = Belt_List.toArray;
 
@@ -68,10 +69,16 @@ var Router = /* module */[
   /* unwrap */unwrap
 ];
 
+function linkTo(path, $$event) {
+  $$event.preventDefault();
+  return ReasonReactRouter.push(path);
+}
+
 export {
   RR ,
   s ,
   Router ,
+  linkTo ,
   
 }
 /* ReasonReact Not a pure module */

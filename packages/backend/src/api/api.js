@@ -19,6 +19,12 @@ router.get("/jobs", function(req, res) {
   });
 });
 
+router.get("/job/:id", function(req, res) {
+  JobsModal.findOne({ _id: req.params.id }, (err, docs) => {
+    res.status(200).json(docs);
+  });
+});
+
 router.get("/jobs/latest", function(req, res) {
   JobsModal.find({}, null, { skip: 0, limit: defaultLimit }, (err, docs) => {
     res.status(200).json(docs);
