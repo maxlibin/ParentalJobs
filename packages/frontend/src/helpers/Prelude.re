@@ -9,12 +9,22 @@ let s = RR.string;
 module Router = {
   type t =
     | Home
-    | Jobs;
+    | Jobs
+    | Job(string)
+    | NotFound;
 
-  let wrap = urlPath => {
-    switch (urlPath) {
-    | ["jobs", ...rest] => Jobs
-    | _ => Home
+  let parseUrl = (url: ReasonReactRouter.url) =>
+    switch (url.path) {
+    | [] => Home
+    | ["job", id] => Job(id)
+    | ["jobs"] => Jobs
+    | _ => NotFound
     };
-  };
+
+  let unwrap =
+    fun
+    | Jobs => "jobs"
+    | Job(_) => "job"
+    | Home => "home"
+    | _ => "NotFound";
 };

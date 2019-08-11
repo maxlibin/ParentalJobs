@@ -22,15 +22,51 @@ function s(prim) {
   return prim;
 }
 
-function wrap(urlPath) {
-  if (urlPath && urlPath[0] === "jobs") {
-    return /* Jobs */1;
+function parseUrl(url) {
+  var match = url[/* path */0];
+  if (match) {
+    switch (match[0]) {
+      case "job" : 
+          var match$1 = match[1];
+          if (match$1 && !match$1[1]) {
+            return /* Job */[match$1[0]];
+          } else {
+            return /* NotFound */2;
+          }
+      case "jobs" : 
+          if (match[1]) {
+            return /* NotFound */2;
+          } else {
+            return /* Jobs */1;
+          }
+      default:
+        return /* NotFound */2;
+    }
   } else {
     return /* Home */0;
   }
 }
 
-var Router = /* module */[/* wrap */wrap];
+function unwrap(param) {
+  if (typeof param === "number") {
+    switch (param) {
+      case 0 : 
+          return "home";
+      case 1 : 
+          return "jobs";
+      case 2 : 
+          return "NotFound";
+      
+    }
+  } else {
+    return "job";
+  }
+}
+
+var Router = /* module */[
+  /* parseUrl */parseUrl,
+  /* unwrap */unwrap
+];
 
 export {
   RR ,

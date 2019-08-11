@@ -4,11 +4,11 @@ import * as Cn from "re-classnames/src/Cn.bs.js";
 import * as Curry from "bs-platform/lib/es6/curry.js";
 import * as React from "react";
 import * as Belt_List from "bs-platform/lib/es6/belt_List.js";
-import * as Api$Tripdeer from "../helpers/Api.bs.js";
-import * as Avatar$Tripdeer from "../components/Avatar.bs.js";
-import * as Jobs_bs$Tripdeer from "../types/jobs_bs.bs.js";
-import * as Prelude$Tripdeer from "../helpers/Prelude.bs.js";
-import * as Home_Css$Tripdeer from "./Home_Css.bs.js";
+import * as Api$Frontend from "../helpers/Api.bs.js";
+import * as Avatar$Frontend from "../components/Avatar.bs.js";
+import * as Jobs_bs$Frontend from "../types/jobs_bs.bs.js";
+import * as Prelude$Frontend from "../helpers/Prelude.bs.js";
+import * as Home_Css$Frontend from "./Home_Css.bs.js";
 import * as Atdgen_codec_runtime from "@ahrefs/bs-atdgen-codec-runtime/src/atdgen_codec_runtime.bs.js";
 
 function Home(Props) {
@@ -19,8 +19,8 @@ function Home(Props) {
   var jobs = match[0];
   React.useEffect((function () {
           var partial_arg = Atdgen_codec_runtime.Decode[/* decode */1];
-          Api$Tripdeer.Jobs[/* latest */0]((function (param) {
-                    return partial_arg(Jobs_bs$Tripdeer.read_jobs, param);
+          Api$Frontend.Jobs[/* latest */0]((function (param) {
+                    return partial_arg(Jobs_bs$Frontend.read_jobs, param);
                   })).then((function (res) {
                   return Promise.resolve(Curry._1(setJobs, (function (param) {
                                     return /* Loaded */[res];
@@ -29,43 +29,43 @@ function Home(Props) {
           return undefined;
         }), ([]));
   return React.createElement(React.Fragment, undefined, React.createElement("div", {
-                  className: Home_Css$Tripdeer.container
+                  className: Home_Css$Frontend.container
                 }, React.createElement("div", {
                       className: "container"
                     }, React.createElement("div", {
-                          className: Home_Css$Tripdeer.header
+                          className: Home_Css$Frontend.header
                         }, React.createElement("h1", {
-                              className: Home_Css$Tripdeer.title
-                            }, Prelude$Tripdeer.s("Parents friendly jobs")), React.createElement("h3", {
-                              className: Home_Css$Tripdeer.subTitle
-                            }, Prelude$Tripdeer.s("Parental job is the largest parents friendly work community in the\n          world. We aggregate jobs from everywhere so you don't have to search around everywhere.")), React.createElement("button", {
-                              className: Home_Css$Tripdeer.button
-                            }, Prelude$Tripdeer.s("Post a job for free!"))))), React.createElement("div", {
+                              className: Home_Css$Frontend.title
+                            }, Prelude$Frontend.s("Parents friendly jobs")), React.createElement("h3", {
+                              className: Home_Css$Frontend.subTitle
+                            }, Prelude$Frontend.s("Parental job is the largest parents friendly work community in the\n          world. We aggregate jobs from everywhere so you don't have to search around everywhere.")), React.createElement("button", {
+                              className: Home_Css$Frontend.button
+                            }, Prelude$Frontend.s("Post a job for free!"))))), React.createElement("div", {
                   className: Cn.make(/* :: */[
                         "container",
                         /* :: */[
-                          Home_Css$Tripdeer.jobsList,
+                          Home_Css$Frontend.jobsList,
                           /* [] */0
                         ]
                       ])
-                }, jobs ? React.createElement("ul", undefined, Prelude$Tripdeer.RR[/* list */9](Belt_List.mapWithIndex(jobs[0], (function (index, param) {
+                }, jobs ? React.createElement("ul", undefined, Prelude$Frontend.RR[/* list */9](Belt_List.mapWithIndex(jobs[0], (function (index, param) {
                                   var company = param[/* company */0];
                                   return React.createElement("li", {
                                               key: String(index),
-                                              className: Home_Css$Tripdeer.job
-                                            }, React.createElement(Avatar$Tripdeer.make, {
-                                                  className: Home_Css$Tripdeer.avatar,
+                                              className: Home_Css$Frontend.job
+                                            }, React.createElement(Avatar$Frontend.make, {
+                                                  className: Home_Css$Frontend.avatar,
                                                   company: company
                                                 }), React.createElement("div", undefined, React.createElement("span", {
-                                                      className: Home_Css$Tripdeer.company
-                                                    }, Prelude$Tripdeer.s(company)), React.createElement("h3", {
-                                                      className: Home_Css$Tripdeer.jobTitle
-                                                    }, Prelude$Tripdeer.s(param[/* jobTitle */1])), React.createElement("cite", {
-                                                      className: Home_Css$Tripdeer.category
-                                                    }, React.createElement("span", undefined, Prelude$Tripdeer.s(param[/* jobCategories */7])))), React.createElement("div", {
-                                                  className: Home_Css$Tripdeer.employmentType
-                                                }, React.createElement("span", undefined, Prelude$Tripdeer.s(param[/* employmentType */4]))));
-                                })))) : Prelude$Tripdeer.s("Loading...")));
+                                                      className: Home_Css$Frontend.company
+                                                    }, Prelude$Frontend.s(company)), React.createElement("h3", {
+                                                      className: Home_Css$Frontend.jobTitle
+                                                    }, Prelude$Frontend.s(param[/* jobTitle */1])), React.createElement("cite", {
+                                                      className: Home_Css$Frontend.category
+                                                    }, React.createElement("span", undefined, Prelude$Frontend.s(param[/* jobCategories */7])))), React.createElement("div", {
+                                                  className: Home_Css$Frontend.employmentType
+                                                }, React.createElement("span", undefined, Prelude$Frontend.s(param[/* employmentType */4]))));
+                                })))) : Prelude$Frontend.s("Loading...")));
 }
 
 var Css = 0;

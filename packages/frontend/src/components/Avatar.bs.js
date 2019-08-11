@@ -7,8 +7,8 @@ import * as Js_math from "bs-platform/lib/es6/js_math.js";
 import * as Belt_List from "bs-platform/lib/es6/belt_List.js";
 import * as Belt_Option from "bs-platform/lib/es6/belt_Option.js";
 import * as Caml_string from "bs-platform/lib/es6/caml_string.js";
-import * as Prelude$Tripdeer from "../helpers/Prelude.bs.js";
-import * as Avatar_Css$Tripdeer from "./Avatar_Css.bs.js";
+import * as Prelude$Frontend from "../helpers/Prelude.bs.js";
+import * as Avatar_Css$Frontend from "./Avatar_Css.bs.js";
 
 function randomBgColor(param) {
   var colors = /* :: */[
@@ -51,7 +51,7 @@ function Avatar(Props) {
   var logo = Props.logo;
   return React.createElement("span", {
               className: Cn.make(/* :: */[
-                    Avatar_Css$Tripdeer.avatar,
+                    Avatar_Css$Frontend.avatar,
                     /* :: */[
                       Cn.unpack(className),
                       /* [] */0
@@ -64,8 +64,8 @@ function Avatar(Props) {
                     alt: company,
                     src: logo
                   }) : React.createElement("span", {
-                    className: Avatar_Css$Tripdeer.name
-                  }, Prelude$Tripdeer.s($$String.make(1, Caml_string.get(company, 0)))));
+                    className: Avatar_Css$Frontend.name
+                  }, Prelude$Frontend.s($$String.make(1, Caml_string.get(company, 0)))));
 }
 
 var Css = 0;

@@ -1,6 +1,6 @@
 
 {
-  "name": "tripdeer",
+  "name": "frontend",
   "reason": {
     "react-jsx": 3
   },
@@ -19,6 +19,7 @@
   "suffix": ".bs.js",
   "namespace": true,
   "ppx-flags": ["bs-emotion-ppx/ppx"],
+  "warnings": { "error": "+A-d" },
   "bs-dependencies": [
     "bs-emotion",
     "re-classnames",

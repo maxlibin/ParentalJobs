@@ -3,17 +3,18 @@
 import * as React from "react";
 import * as Prelude$Frontend from "../helpers/Prelude.bs.js";
 
-function Jobs(Props) {
+function Job(Props) {
+  var id = Props.id;
   return React.createElement("div", {
               className: "container"
             }, React.createElement("div", {
                   className: "page-header"
                 }, React.createElement("h1", {
                       className: "page-title"
-                    }, Prelude$Frontend.s("Jobs"))));
+                    }, Prelude$Frontend.s("Job" + id))));
 }
 
-var make = Jobs;
+var make = Job;
 
 export {
   make ,

@@ -2,11 +2,11 @@
 
 import * as React from "react";
 import * as ReactDOMRe from "reason-react/src/ReactDOMRe.js";
-import * as App$Tripdeer from "./App.bs.js";
+import * as App$Frontend from "./App.bs.js";
 
 ((require("./assets/css/dashboard.css")));
 
-ReactDOMRe.renderToElementWithId(React.createElement(App$Tripdeer.make, { }), "root");
+ReactDOMRe.renderToElementWithId(React.createElement(App$Frontend.make, { }), "root");
 
 export {
   

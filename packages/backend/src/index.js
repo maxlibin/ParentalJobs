@@ -9,9 +9,12 @@ const app = express();
 app.use(bodyParser.json());
 
 app.use("/api", api);
+app.get("/test", function(req, res) {
+  res.send("nothing");
+});
 
-// app.get("*", (req, res) =>
-//   res.sendFile(path.join(__dirname, "../frontend/build", "index.html"))
-// );
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "../frontend/src/index.html"));
+});
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
