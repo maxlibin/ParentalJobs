@@ -5,31 +5,81 @@ import * as Emotion from "bs-emotion/src/Emotion.bs.js";
 var content = Emotion.css(undefined, /* :: */[
       Emotion.label("content"),
       /* :: */[
-        Emotion.select("p", /* :: */[
-              Emotion.fontSize(/* `px */[
-                    25096,
-                    16
-                  ]),
-              /* :: */[
-                Emotion.lineHeight(/* `px */[
-                      25096,
-                      24
-                    ]),
-                /* [] */0
-              ]
+        Emotion.marginRight(/* `px */[
+              25096,
+              60
             ]),
         /* :: */[
-          Emotion.select(".brand-sec", /* :: */[
+          Emotion.select("p, li", /* :: */[
                 Emotion.fontSize(/* `px */[
                       25096,
-                      24
+                      18
                     ]),
                 /* :: */[
-                  Emotion.fontWeight(700),
-                  /* [] */0
+                  Emotion.fontWeight(300),
+                  /* :: */[
+                    Emotion.lineHeight(/* `px */[
+                          25096,
+                          24
+                        ]),
+                    /* :: */[
+                      Emotion.marginBottom(/* `px */[
+                            25096,
+                            16
+                          ]),
+                      /* [] */0
+                    ]
+                  ]
                 ]
               ]),
-          /* [] */0
+          /* :: */[
+            Emotion.select("ul", /* :: */[
+                  Emotion.marginBottom(/* `px */[
+                        25096,
+                        24
+                      ]),
+                  /* [] */0
+                ]),
+            /* :: */[
+              Emotion.select(".brand-sec", /* :: */[
+                    Emotion.fontSize(/* `px */[
+                          25096,
+                          22
+                        ]),
+                    /* :: */[
+                      Emotion.fontWeight(700),
+                      /* [] */0
+                    ]
+                  ]),
+              /* [] */0
+            ]
+          ]
+        ]
+      ]
+    ]);
+
+var contentWrapper = Emotion.css(undefined, /* :: */[
+      Emotion.label("contentWrapper"),
+      /* :: */[
+        Emotion.borderBottom(/* `px */[
+              25096,
+              1
+            ], /* solid */12956715, /* `hex */[
+              5194459,
+              "eee"
+            ]),
+        /* :: */[
+          Emotion.marginBottom(/* `px */[
+                25096,
+                30
+              ]),
+          /* :: */[
+            Emotion.paddingBottom(/* `px */[
+                  25096,
+                  30
+                ]),
+            /* [] */0
+          ]
         ]
       ]
     ]);
@@ -58,11 +108,14 @@ var jobTitle = Emotion.css(undefined, /* :: */[
                 28
               ]),
           /* :: */[
-            Emotion.marginBottom(/* `px */[
-                  25096,
-                  20
-                ]),
-            /* [] */0
+            Emotion.fontWeight(700),
+            /* :: */[
+              Emotion.marginBottom(/* `px */[
+                    25096,
+                    20
+                  ]),
+              /* [] */0
+            ]
           ]
         ]
       ]
@@ -93,7 +146,7 @@ var tags = Emotion.css(undefined, /* :: */[
       /* :: */[
         Emotion.marginBottom(/* `px */[
               25096,
-              30
+              20
             ]),
         /* :: */[
           Emotion.borderBottom(/* `px */[
@@ -121,7 +174,7 @@ var tag = Emotion.css(undefined, /* :: */[
         /* :: */[
           Emotion.backgroundColor(/* `hex */[
                 5194459,
-                "ef4f00"
+                "0088ec"
               ]),
           /* :: */[
             Emotion.color(Emotion.Css[/* Color */11][/* white */145]),
@@ -138,7 +191,109 @@ var tag = Emotion.css(undefined, /* :: */[
                       25096,
                       10
                     ]),
-                /* [] */0
+                /* :: */[
+                  Emotion.marginBottom(/* `px */[
+                        25096,
+                        10
+                      ]),
+                  /* [] */0
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    ]);
+
+var quality = Emotion.css(undefined, /* :: */[
+      Emotion.label("quality"),
+      /* :: */[
+        Emotion.boxShadow(/* zero */-789508312, /* zero */-789508312, /* zero */-789508312, /* `px */[
+              25096,
+              1
+            ], undefined, /* `rgba */[
+              -878128972,
+              /* tuple */[
+                0,
+                0,
+                0,
+                0.16
+              ]
+            ]),
+        /* :: */[
+          Emotion.position(/* relative */903134412),
+          /* :: */[
+            Emotion.marginTop(/* `px */[
+                  25096,
+                  30
+                ]),
+            /* :: */[
+              Emotion.marginBottom(/* `px */[
+                    25096,
+                    30
+                  ]),
+              /* :: */[
+                Emotion.padding4(/* `px */[
+                      25096,
+                      40
+                    ], /* `px */[
+                      25096,
+                      20
+                    ], /* `px */[
+                      25096,
+                      20
+                    ], /* `px */[
+                      25096,
+                      20
+                    ]),
+                /* :: */[
+                  Emotion.textAlign(/* left */-944764921),
+                  /* [] */0
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    ]);
+
+var letusKnow = Emotion.css(undefined, /* :: */[
+      Emotion.label("letusKnow"),
+      /* :: */[
+        Emotion.border(/* `px */[
+              25096,
+              1
+            ], /* solid */12956715, /* `hex */[
+              5194459,
+              "ccc"
+            ]),
+        /* :: */[
+          Emotion.padding2(/* `px */[
+                25096,
+                10
+              ], /* `px */[
+                25096,
+                20
+              ]),
+          /* :: */[
+            Emotion.color(/* `hex */[
+                  5194459,
+                  "333"
+                ]),
+            /* :: */[
+              Emotion.marginTop(/* `px */[
+                    25096,
+                    10
+                  ]),
+              /* :: */[
+                Emotion.display(/* inlineBlock */-147785676),
+                /* :: */[
+                  Emotion.hover(/* :: */[
+                        Emotion.textDecoration(/* none */-922086728),
+                        /* [] */0
+                      ]),
+                  /* [] */0
+                ]
               ]
             ]
           ]
@@ -148,11 +303,14 @@ var tag = Emotion.css(undefined, /* :: */[
 
 export {
   content ,
+  contentWrapper ,
   postDate ,
   jobTitle ,
   companyName ,
   tags ,
   tag ,
+  quality ,
+  letusKnow ,
   
 }
 /* content Not a pure module */

@@ -7,7 +7,9 @@ import * as Api$Frontend from "../helpers/Api.bs.js";
 import * as Job_Css$Frontend from "./Job_Css.bs.js";
 import * as Jobs_bs$Frontend from "../types/jobs_bs.bs.js";
 import * as Prelude$Frontend from "../helpers/Prelude.bs.js";
+import * as ApplyBtn$Frontend from "../components/ApplyBtn.bs.js";
 import * as Atdgen_codec_runtime from "@ahrefs/bs-atdgen-codec-runtime/src/atdgen_codec_runtime.bs.js";
+import * as CompanyInfo$Frontend from "../components/CompanyInfo.bs.js";
 
 function Job(Props) {
   var id = Props.id;
@@ -39,43 +41,51 @@ function Job(Props) {
   } else {
     var match$1 = job[0];
     var minExperience = match$1[/* minExperience */7];
-    tmp = React.createElement("div", undefined, React.createElement("span", {
-              className: Job_Css$Frontend.postDate
-            }, Prelude$Frontend.s(match$1[/* postedOn */10])), React.createElement("h1", {
-              className: Job_Css$Frontend.jobTitle
-            }, Prelude$Frontend.s(match$1[/* jobTitle */2])), React.createElement("h4", {
-              className: Job_Css$Frontend.companyName
-            }, Prelude$Frontend.s(match$1[/* company */1])), React.createElement("p", {
-              className: Job_Css$Frontend.tags
-            }, React.createElement("span", {
-                  className: Job_Css$Frontend.tag
-                }, Prelude$Frontend.s(match$1[/* employmentType */5])), React.createElement("span", {
-                  className: Job_Css$Frontend.tag
-                }, Prelude$Frontend.s(match$1[/* seniority */6])), minExperience !== "" ? React.createElement("span", {
-                    className: Job_Css$Frontend.tag
-                  }, Prelude$Frontend.s(minExperience)) : null, React.createElement("span", {
-                  className: Job_Css$Frontend.tag
-                }, Prelude$Frontend.s(match$1[/* jobCategories */8]))), React.createElement("div", {
-              className: Job_Css$Frontend.content,
-              dangerouslySetInnerHTML: {
-                __html: match$1[/* jobDescription */11]
-              }
-            }), React.createElement("div", {
-              className: Job_Css$Frontend.content,
-              dangerouslySetInnerHTML: {
-                __html: match$1[/* requirement */12]
-              }
-            }));
+    tmp = React.createElement(React.Fragment, undefined, React.createElement("div", {
+              className: "col-md-8"
+            }, React.createElement("div", {
+                  className: Job_Css$Frontend.contentWrapper
+                }, React.createElement("span", {
+                      className: Job_Css$Frontend.postDate
+                    }, Prelude$Frontend.s(match$1[/* postedOn */10])), React.createElement("h1", {
+                      className: Job_Css$Frontend.jobTitle
+                    }, Prelude$Frontend.s(match$1[/* jobTitle */2])), React.createElement("p", {
+                      className: Job_Css$Frontend.tags
+                    }, React.createElement("span", {
+                          className: Job_Css$Frontend.tag
+                        }, Prelude$Frontend.s(match$1[/* employmentType */5])), React.createElement("span", {
+                          className: Job_Css$Frontend.tag
+                        }, Prelude$Frontend.s(match$1[/* seniority */6])), minExperience !== "" ? React.createElement("span", {
+                            className: Job_Css$Frontend.tag
+                          }, Prelude$Frontend.s(minExperience)) : null, React.createElement("span", {
+                          className: Job_Css$Frontend.tag
+                        }, Prelude$Frontend.s(match$1[/* jobCategories */8]))), React.createElement("div", {
+                      className: Job_Css$Frontend.content,
+                      dangerouslySetInnerHTML: {
+                        __html: match$1[/* jobDescription */11]
+                      }
+                    }), React.createElement("div", {
+                      className: Job_Css$Frontend.content,
+                      dangerouslySetInnerHTML: {
+                        __html: match$1[/* requirement */12]
+                      }
+                    })), React.createElement(ApplyBtn$Frontend.make, { }), React.createElement("div", {
+                  className: Job_Css$Frontend.quality
+                }, React.createElement("h4", undefined, Prelude$Frontend.s("Help us maintain the quality of jobs posted on We Work Remotely.")), React.createElement("p", undefined, Prelude$Frontend.s("Is this job parents friendly?")), React.createElement("a", {
+                      className: Job_Css$Frontend.letusKnow,
+                      href: "mailTo:me@maxlibin.com"
+                    }, Prelude$Frontend.s("Let us know")))), React.createElement("div", {
+              className: "col-md-4"
+            }, React.createElement(CompanyInfo$Frontend.make, {
+                  address: match$1[/* address */4],
+                  company: match$1[/* company */1]
+                })));
   }
   return React.createElement("div", {
               className: "container"
             }, React.createElement("div", {
                   className: "row"
-                }, React.createElement("div", {
-                      className: "col-md-8"
-                    }, tmp), React.createElement("div", {
-                      className: "col-md-4"
-                    })));
+                }, tmp));
 }
 
 var Css = 0;

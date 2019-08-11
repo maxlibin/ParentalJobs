@@ -44,6 +44,7 @@ let button = [%css [
 
 let jobsList = [%css [
   marginTop (`px 60);
+  marginBottom (`px 60);
 ]]
 
 let job = [%css [
@@ -54,13 +55,23 @@ let job = [%css [
   marginBottom (`px 20);
   borderLeft (`px 5) `solid (`hex "d4d4d4");
   display `flex;
+  flexWrap `wrap;
   alignItems `center;
   position `relative;
+
+  select "div:first-of-type" [
+    flex (`some(1., 1., `auto));
+  ];
 
   hover [
     backgroundColor (`rgba(3, 3, 3, 0.04));
     cursor `pointer;
-  ]
+  ];
+
+  media "(max-width: 768px)" [
+    paddingTop (`px 40);
+    marginBottom (`px 60);
+  ];
 ]]
 
 let parentFriendlyjob = [%css [
@@ -88,10 +99,22 @@ let employmentType = [%css [
   fontSize (`px 16);
   fontWeight 700;
   marginRight (`px 50);
+
+  media "(max-width: 768px)" [
+    display `block;
+    marginTop (`px 20);
+    width (`pct 100.);
+  ];
 ]]
 
 let avatar = [%css [
   display `block;
   position `absolute;
   right (`px ~-30);
+
+  media "(max-width: 768px)" [
+    right (`pct 50.);
+    marginRight (`px ~-30);
+    top (`px ~-30);
+  ];
 ]]

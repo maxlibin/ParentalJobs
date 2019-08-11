@@ -159,7 +159,13 @@ var jobsList = Emotion.css(undefined, /* :: */[
               25096,
               60
             ]),
-        /* [] */0
+        /* :: */[
+          Emotion.marginBottom(/* `px */[
+                25096,
+                60
+              ]),
+          /* [] */0
+        ]
       ]
     ]);
 
@@ -200,26 +206,57 @@ var job = Emotion.css(undefined, /* :: */[
                   /* :: */[
                     Emotion.display(/* flex */-1010954439),
                     /* :: */[
-                      Emotion.alignItems(/* center */98248149),
+                      Emotion.flexWrap(/* wrap */-822134326),
                       /* :: */[
-                        Emotion.position(/* relative */903134412),
+                        Emotion.alignItems(/* center */98248149),
                         /* :: */[
-                          Emotion.hover(/* :: */[
-                                Emotion.backgroundColor(/* `rgba */[
-                                      -878128972,
-                                      /* tuple */[
-                                        3,
-                                        3,
-                                        3,
-                                        0.04
+                          Emotion.position(/* relative */903134412),
+                          /* :: */[
+                            Emotion.select("div:first-of-type", /* :: */[
+                                  Emotion.flex(/* `some */[
+                                        -866639116,
+                                        /* tuple */[
+                                          1,
+                                          1,
+                                          /* auto */-1065951377
+                                        ]
+                                      ]),
+                                  /* [] */0
+                                ]),
+                            /* :: */[
+                              Emotion.hover(/* :: */[
+                                    Emotion.backgroundColor(/* `rgba */[
+                                          -878128972,
+                                          /* tuple */[
+                                            3,
+                                            3,
+                                            3,
+                                            0.04
+                                          ]
+                                        ]),
+                                    /* :: */[
+                                      Emotion.cursor(/* pointer */-786317123),
+                                      /* [] */0
+                                    ]
+                                  ]),
+                              /* :: */[
+                                Emotion.media("(max-width: 768px)", /* :: */[
+                                      Emotion.paddingTop(/* `px */[
+                                            25096,
+                                            40
+                                          ]),
+                                      /* :: */[
+                                        Emotion.marginBottom(/* `px */[
+                                              25096,
+                                              60
+                                            ]),
+                                        /* [] */0
                                       ]
                                     ]),
-                                /* :: */[
-                                  Emotion.cursor(/* pointer */-786317123),
-                                  /* [] */0
-                                ]
-                              ]),
-                          /* [] */0
+                                /* [] */0
+                              ]
+                            ]
+                          ]
                         ]
                       ]
                     ]
@@ -312,7 +349,25 @@ var employmentType = Emotion.css(undefined, /* :: */[
                     25096,
                     50
                   ]),
-              /* [] */0
+              /* :: */[
+                Emotion.media("(max-width: 768px)", /* :: */[
+                      Emotion.display(/* block */888960333),
+                      /* :: */[
+                        Emotion.marginTop(/* `px */[
+                              25096,
+                              20
+                            ]),
+                        /* :: */[
+                          Emotion.width(/* `pct */[
+                                5591841,
+                                100
+                              ]),
+                          /* [] */0
+                        ]
+                      ]
+                    ]),
+                /* [] */0
+              ]
             ]
           ]
         ]
@@ -330,7 +385,28 @@ var avatar = Emotion.css(undefined, /* :: */[
                   25096,
                   -30
                 ]),
-            /* [] */0
+            /* :: */[
+              Emotion.media("(max-width: 768px)", /* :: */[
+                    Emotion.right(/* `pct */[
+                          5591841,
+                          50
+                        ]),
+                    /* :: */[
+                      Emotion.marginRight(/* `px */[
+                            25096,
+                            -30
+                          ]),
+                      /* :: */[
+                        Emotion.top(/* `px */[
+                              25096,
+                              -30
+                            ]),
+                        /* [] */0
+                      ]
+                    ]
+                  ]),
+              /* [] */0
+            ]
           ]
         ]
       ]

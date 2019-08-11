@@ -70,7 +70,7 @@ function Home(Props) {
                               className: Home_Css$Frontend.subTitle
                             }, Prelude$Frontend.s("Parental job is the largest parents friendly work community in the\n          world. We aggregate jobs from everywhere so you don't have to search around everywhere.")), React.createElement("button", {
                               className: Home_Css$Frontend.button
-                            }, Prelude$Frontend.s("Post a job for free!"))))), React.createElement("div", {
+                            }, Prelude$Frontend.s("Post a job for $79!"))))), React.createElement("div", {
                   className: Cn.make(/* :: */[
                         "container",
                         /* :: */[
