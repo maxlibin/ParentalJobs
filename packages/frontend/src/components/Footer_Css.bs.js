@@ -26,10 +26,10 @@ var title = Emotion.css(undefined, /* :: */[
       /* :: */[
         Emotion.fontSize(/* `px */[
               25096,
-              32
+              22
             ]),
         /* :: */[
-          Emotion.fontWeight(700),
+          Emotion.fontWeight(900),
           /* :: */[
             Emotion.textTransform(/* uppercase */-415330030),
             /* [] */0

@@ -35,7 +35,7 @@ var read_salary = Atdgen_codec_runtime.Decode[/* make */0]((function (json) {
               ];
       }));
 
-var write_latestJob = Atdgen_codec_runtime.Encode[/* make */0]((function (t) {
+var write_jobOverview = Atdgen_codec_runtime.Encode[/* make */0]((function (t) {
         return Atdgen_codec_runtime.Encode[/* obj */14](/* :: */[
                     Atdgen_codec_runtime.Encode[/* field */12](undefined, Atdgen_codec_runtime.Encode[/* string */3], "_id", t[/* _id */0]),
                     /* :: */[
@@ -66,7 +66,7 @@ var write_latestJob = Atdgen_codec_runtime.Encode[/* make */0]((function (t) {
                   ]);
       }));
 
-var read_latestJob = Atdgen_codec_runtime.Decode[/* make */0]((function (json) {
+var read_jobOverview = Atdgen_codec_runtime.Decode[/* make */0]((function (json) {
         var partial_arg = Atdgen_codec_runtime.Decode[/* string */7];
         var partial_arg$1 = Atdgen_codec_runtime.Decode[/* field */15];
         var partial_arg$2 = Atdgen_codec_runtime.Decode[/* string */7];
@@ -117,14 +117,14 @@ var read_latestJob = Atdgen_codec_runtime.Decode[/* make */0]((function (json) {
 
 var partial_arg = Atdgen_codec_runtime.Encode[/* list */8];
 
-function write__2(param) {
-  return partial_arg(write_latestJob, param);
+function write__1(param) {
+  return partial_arg(write_jobOverview, param);
 }
 
 var partial_arg$1 = Atdgen_codec_runtime.Decode[/* list */11];
 
-function read__2(param) {
-  return partial_arg$1(read_latestJob, param);
+function read__1(param) {
+  return partial_arg$1(read_jobOverview, param);
 }
 
 var write_job = Atdgen_codec_runtime.Encode[/* make */0]((function (t) {
@@ -239,21 +239,9 @@ var read_job = Atdgen_codec_runtime.Decode[/* make */0]((function (json) {
               ];
       }));
 
-var partial_arg$2 = Atdgen_codec_runtime.Encode[/* list */8];
+var read_latestJobs = read__1;
 
-function write__1(param) {
-  return partial_arg$2(write_job, param);
-}
-
-var partial_arg$3 = Atdgen_codec_runtime.Decode[/* list */11];
-
-function read__1(param) {
-  return partial_arg$3(read_job, param);
-}
-
-var read_latestJobs = read__2;
-
-var write_latestJobs = write__2;
+var write_latestJobs = write__1;
 
 var read_jobs = read__1;
 
@@ -262,14 +250,14 @@ var write_jobs = write__1;
 export {
   read_salary ,
   write_salary ,
-  read_latestJob ,
-  write_latestJob ,
+  read_jobOverview ,
+  write_jobOverview ,
   read_latestJobs ,
   write_latestJobs ,
-  read_job ,
-  write_job ,
   read_jobs ,
   write_jobs ,
+  read_job ,
+  write_job ,
   
 }
 /* write_salary Not a pure module */

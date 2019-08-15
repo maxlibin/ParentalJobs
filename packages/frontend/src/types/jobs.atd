@@ -20,7 +20,7 @@ type job = {
   requirement: string;
 }
 
-type latestJob = {
+type jobOverview = {
   _id: string;
   company: string;
   jobTitle: string;
@@ -32,5 +32,5 @@ type latestJob = {
   postedOn: string;
 }
 
-type jobs = job list
-type latestJobs = latestJob list
+type jobs = jobOverview list
+type latestJobs = jobOverview list

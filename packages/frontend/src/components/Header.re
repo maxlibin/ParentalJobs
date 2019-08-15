@@ -1,5 +1,7 @@
 open Prelude;
 
+module Css = Header_Css;
+
 [@react.component]
 let make = () => {
   <>
@@ -7,7 +9,7 @@ let make = () => {
       <div className="container">
         <div className="d-flex">
           <a
-            className="header-brand"
+            className={Cn.make(["header-brand", Css.brand])}
             href="/"
             onClick={event => "/"->linkTo(event)}>
             "ParentalJobs"->s
@@ -18,7 +20,7 @@ let make = () => {
                 <a
                   href="/jobs"
                   onClick={event => "/jobs"->linkTo(event)}
-                  className="nav-link">
+                  className={Cn.make(["nav-link", Css.navLink])}>
                   "Find a job"->s
                 </a>
               </li>

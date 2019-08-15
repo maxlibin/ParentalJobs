@@ -41,37 +41,10 @@ let make = () => {
        | Loading => "Loading..."->s
        | Error(err) => err->stringOfPromiseError->s
        | Loaded(jobs) =>
-         <ul>
-           {jobs
-            ->List.map(
-                (
-                  {
-                    _id as id,
-                    company,
-                    jobTitle,
-                    employmentType,
-                    jobCategories,
-                  },
-                ) =>
-                <li
-                  key=id
-                  className=Css.job
-                  onClick={event => {j|/job/$id|j}->linkTo(event)}>
-                  <Avatar className=Css.avatar company />
-                  <div>
-                    <span className=Css.company> company->s </span>
-                    <h3 className=Css.jobTitle> jobTitle->s </h3>
-                    <cite className=Css.category>
-                      <span> jobCategories->s </span>
-                    </cite>
-                  </div>
-                  <div className=Css.employmentType>
-                    <span> employmentType->s </span>
-                  </div>
-                </li>
-              )
-            ->RR.list}
-         </ul>
+         <>
+           <h4 className=Css.title> "Latest jobs"->s </h4>
+           <JobsList jobs />
+         </>
        }}
     </div>
   </>;

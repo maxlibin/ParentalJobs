@@ -17,12 +17,17 @@ function latest(decode) {
   return get("/api/jobs/latest", decode);
 }
 
+function jobs(decode) {
+  return get("/api/jobs", decode);
+}
+
 function job(id, decode) {
   return get("/api/job/" + (String(id) + ""), decode);
 }
 
 var Jobs = /* module */[
   /* latest */latest,
+  /* jobs */jobs,
   /* job */job
 ];
 

@@ -4,12 +4,11 @@ import * as Cn from "re-classnames/src/Cn.bs.js";
 import * as Block from "bs-platform/lib/es6/block.js";
 import * as Curry from "bs-platform/lib/es6/curry.js";
 import * as React from "react";
-import * as Belt_List from "bs-platform/lib/es6/belt_List.js";
 import * as Api$Frontend from "../helpers/Api.bs.js";
-import * as Avatar$Frontend from "../components/Avatar.bs.js";
 import * as Jobs_bs$Frontend from "../types/jobs_bs.bs.js";
 import * as Prelude$Frontend from "../helpers/Prelude.bs.js";
 import * as Home_Css$Frontend from "./Home_Css.bs.js";
+import * as JobsList$Frontend from "../components/JobsList.bs.js";
 import * as Atdgen_codec_runtime from "@ahrefs/bs-atdgen-codec-runtime/src/atdgen_codec_runtime.bs.js";
 
 function Home(Props) {
@@ -35,28 +34,11 @@ function Home(Props) {
         }), ([]));
   var tmp;
   tmp = typeof jobs === "number" ? Prelude$Frontend.s("Loading...") : (
-      jobs.tag ? Prelude$Frontend.s(jobs[0].toString()) : React.createElement("ul", undefined, Prelude$Frontend.RR[/* list */9](Belt_List.map(jobs[0], (function (param) {
-                        var id = param[/* _id */0];
-                        var company = param[/* company */1];
-                        return React.createElement("li", {
-                                    key: id,
-                                    className: Home_Css$Frontend.job,
-                                    onClick: (function ($$event) {
-                                        return Prelude$Frontend.linkTo("/job/" + (String(id) + ""), $$event);
-                                      })
-                                  }, React.createElement(Avatar$Frontend.make, {
-                                        className: Home_Css$Frontend.avatar,
-                                        company: company
-                                      }), React.createElement("div", undefined, React.createElement("span", {
-                                            className: Home_Css$Frontend.company
-                                          }, Prelude$Frontend.s(company)), React.createElement("h3", {
-                                            className: Home_Css$Frontend.jobTitle
-                                          }, Prelude$Frontend.s(param[/* jobTitle */2])), React.createElement("cite", {
-                                            className: Home_Css$Frontend.category
-                                          }, React.createElement("span", undefined, Prelude$Frontend.s(param[/* jobCategories */6])))), React.createElement("div", {
-                                        className: Home_Css$Frontend.employmentType
-                                      }, React.createElement("span", undefined, Prelude$Frontend.s(param[/* employmentType */3]))));
-                      }))))
+      jobs.tag ? Prelude$Frontend.s(jobs[0].toString()) : React.createElement(React.Fragment, undefined, React.createElement("h4", {
+                  className: Home_Css$Frontend.title
+                }, Prelude$Frontend.s("Latest jobs")), React.createElement(JobsList$Frontend.make, {
+                  jobs: jobs[0]
+                }))
     );
   return React.createElement(React.Fragment, undefined, React.createElement("div", {
                   className: Home_Css$Frontend.container

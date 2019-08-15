@@ -20,7 +20,7 @@ function Job(Props) {
   var job = match[0];
   React.useEffect((function () {
           var partial_arg = Atdgen_codec_runtime.Decode[/* decode */1];
-          Api$Frontend.Jobs[/* job */1](id, (function (param) {
+          Api$Frontend.Jobs[/* job */2](id, (function (param) {
                       return partial_arg(Jobs_bs$Frontend.read_job, param);
                     })).then((function (res) {
                     return Promise.resolve(Curry._1(setJob, (function (param) {

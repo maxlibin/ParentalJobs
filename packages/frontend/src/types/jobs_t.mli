@@ -3,7 +3,7 @@
 
 type salary = { salaryFrom: string; salaryTo: string; salaryType: string }
 
-type latestJob = {
+type jobOverview = {
   _id: string;
   company: string;
   jobTitle: string;
@@ -15,7 +15,9 @@ type latestJob = {
   postedOn: string
 }
 
-type latestJobs = latestJob list
+type latestJobs = jobOverview list
+
+type jobs = jobOverview list
 
 type job = {
   _id: string;
@@ -32,5 +34,3 @@ type job = {
   jobDescription: string;
   requirement: string
 }
-
-type jobs = job list

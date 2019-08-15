@@ -7,8 +7,8 @@ let topFooter = [%css [
 ]]
 
 let title = [%css [
-  fontSize (`px 32);
-  fontWeight 700;
+  fontSize (`px 22);
+  fontWeight 900;
   textTransform `uppercase;
 ]]
 

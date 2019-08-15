@@ -7,7 +7,7 @@ type salary = Jobs_t.salary = {
   salaryType: string
 }
 
-type latestJob = Jobs_t.latestJob = {
+type jobOverview = Jobs_t.jobOverview = {
   _id: string;
   company: string;
   jobTitle: string;
@@ -20,6 +20,8 @@ type latestJob = Jobs_t.latestJob = {
 }
 
 type latestJobs = Jobs_t.latestJobs
+
+type jobs = Jobs_t.jobs
 
 type job = Jobs_t.job = {
   _id: string;
@@ -36,8 +38,6 @@ type job = Jobs_t.job = {
   jobDescription: string;
   requirement: string
 }
-
-type jobs = Jobs_t.jobs
 
 let write_salary = (
   Atdgen_codec_runtime.Encode.make (fun (t : salary) ->
@@ -94,8 +94,8 @@ let read_salary = (
     )
   )
 )
-let write_latestJob = (
-  Atdgen_codec_runtime.Encode.make (fun (t : latestJob) ->
+let write_jobOverview = (
+  Atdgen_codec_runtime.Encode.make (fun (t : jobOverview) ->
     (
     Atdgen_codec_runtime.Encode.obj
       [
@@ -165,7 +165,7 @@ let write_latestJob = (
     )
   )
 )
-let read_latestJob = (
+let read_jobOverview = (
   Atdgen_codec_runtime.Decode.make (fun json ->
     (
       ({
@@ -223,25 +223,31 @@ let read_latestJob = (
               Atdgen_codec_runtime.Decode.string
               |> Atdgen_codec_runtime.Decode.field "postedOn"
             ) json;
-      } : latestJob)
+      } : jobOverview)
     )
   )
 )
-let write__2 = (
+let write__1 = (
   Atdgen_codec_runtime.Encode.list (
-    write_latestJob
+    write_jobOverview
   )
 )
-let read__2 = (
+let read__1 = (
   Atdgen_codec_runtime.Decode.list (
-    read_latestJob
+    read_jobOverview
   )
 )
 let write_latestJobs = (
-  write__2
+  write__1
 )
 let read_latestJobs = (
-  read__2
+  read__1
+)
+let write_jobs = (
+  write__1
+)
+let read_jobs = (
+  read__1
 )
 let write_job = (
   Atdgen_codec_runtime.Encode.make (fun (t : job) ->
@@ -427,20 +433,4 @@ let read_job = (
       } : job)
     )
   )
-)
-let write__1 = (
-  Atdgen_codec_runtime.Encode.list (
-    write_job
-  )
-)
-let read__1 = (
-  Atdgen_codec_runtime.Decode.list (
-    read_job
-  )
-)
-let write_jobs = (
-  write__1
-)
-let read_jobs = (
-  read__1
 )
