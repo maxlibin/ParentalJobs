@@ -29,19 +29,30 @@ function parseUrl(url) {
     switch (match[0]) {
       case "job" : 
           var match$1 = match[1];
-          if (match$1 && !match$1[1]) {
-            return /* Job */[match$1[0]];
+          if (match$1) {
+            var id = match$1[0];
+            if (id === "new") {
+              if (match$1[1]) {
+                return /* NotFound */3;
+              } else {
+                return /* New */2;
+              }
+            } else if (match$1[1]) {
+              return /* NotFound */3;
+            } else {
+              return /* Job */[id];
+            }
           } else {
-            return /* NotFound */2;
+            return /* NotFound */3;
           }
       case "jobs" : 
           if (match[1]) {
-            return /* NotFound */2;
+            return /* NotFound */3;
           } else {
             return /* Jobs */1;
           }
       default:
-        return /* NotFound */2;
+        return /* NotFound */3;
     }
   } else {
     return /* Home */0;
@@ -56,6 +67,8 @@ function unwrap(param) {
       case 1 : 
           return "jobs";
       case 2 : 
+          return "new";
+      case 3 : 
           return "NotFound";
       
     }

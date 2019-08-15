@@ -26,7 +26,8 @@
     "reason-react",
     "@glennsl/bs-json",
     "bs-fetch",
-    "@ahrefs/bs-atdgen-codec-runtime"
+    "@ahrefs/bs-atdgen-codec-runtime",
+    "re-formality"
   ],
   "refmt": 3
 }

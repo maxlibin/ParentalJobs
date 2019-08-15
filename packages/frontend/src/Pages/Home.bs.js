@@ -51,7 +51,10 @@ function Home(Props) {
                             }, Prelude$Frontend.s("Parents friendly jobs")), React.createElement("h3", {
                               className: Home_Css$Frontend.subTitle
                             }, Prelude$Frontend.s("Parental job is the largest parents friendly work community in the\n          world. We aggregate jobs from everywhere so you don't have to search around everywhere.")), React.createElement("button", {
-                              className: Home_Css$Frontend.button
+                              className: Home_Css$Frontend.button,
+                              onClick: (function (param) {
+                                  return Prelude$Frontend.linkTo("/job/new", param);
+                                })
                             }, Prelude$Frontend.s("Post a job for $79!"))))), React.createElement("div", {
                   className: Cn.make(/* :: */[
                         "container",

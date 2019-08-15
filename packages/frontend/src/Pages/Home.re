@@ -32,7 +32,9 @@ let make = () => {
           world. We aggregate jobs from everywhere so you don't have to search around everywhere."
             ->s
           </h3>
-          <button className=Css.button> "Post a job for $79!"->s </button>
+          <button className=Css.button onClick={"/job/new"->linkTo}>
+            "Post a job for $79!"->s
+          </button>
         </div>
       </div>
     </div>

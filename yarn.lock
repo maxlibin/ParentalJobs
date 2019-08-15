@@ -5803,6 +5803,18 @@ re-classnames@^4.0.0:
   resolved "https://registry.yarnpkg.com/re-classnames/-/re-classnames-4.0.0.tgz#11c62c5f3f8696c20689fdc6b70cdbea9e3496ef"
   integrity sha512-uYtBCGfSHlNiAKg1nWRnZMWKTaFOHFPmUdygf7j9/bqjh2bTkl5f/8oxSocZriNnCcmdc1JD9YbVSI91lYvONA==
 
+re-debouncer@2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/re-debouncer/-/re-debouncer-2.0.0.tgz#598bd7bc45fa38216c4d2652143c46cdc3334aa1"
+  integrity sha512-DGgIldcw6Fy7IJOqQnWcTUndlkldr0Q3UKFEKcPZh3sK7SDk1o8bY5Pf1omkpeX5TjfMz1oXReQF90ZddGcnFw==
+
+re-formality@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/re-formality/-/re-formality-3.0.0.tgz#4e92807b6b55a750381f5af8a94cf629d67a1d0c"
+  integrity sha512-vXsHiAyXqHZBdAFKPd053Ct7z7OEaNLlXdy83NI5EyNk5aSshzIQoD95HSYTD+W8SB87l3cmPvqL0oq1ATxIng==
+  dependencies:
+    re-debouncer "2.0.0"
+
 react-dom@>=16.8.1, react-dom@^16.8.1:
   version "16.8.6"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.8.6.tgz#71d6303f631e8b0097f56165ef608f051ff6e10f"

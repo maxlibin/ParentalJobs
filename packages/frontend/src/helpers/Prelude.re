@@ -14,11 +14,13 @@ module Router = {
     | Home
     | Jobs
     | Job(string)
+    | New
     | NotFound;
 
   let parseUrl = (url: ReasonReactRouter.url) =>
     switch (url.path) {
     | [] => Home
+    | ["job", "new"] => New
     | ["job", id] => Job(id)
     | ["jobs"] => Jobs
     | _ => NotFound
@@ -28,6 +30,7 @@ module Router = {
     fun
     | Jobs => "jobs"
     | Job(_) => "job"
+    | New => "new"
     | Home => "home"
     | _ => "NotFound";
 };

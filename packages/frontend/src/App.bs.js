@@ -6,6 +6,7 @@ import * as Home$Frontend from "./Pages/Home.bs.js";
 import * as Jobs$Frontend from "./Pages/Jobs.bs.js";
 import * as Footer$Frontend from "./components/Footer.bs.js";
 import * as Header$Frontend from "./components/Header.bs.js";
+import * as NewJob$Frontend from "./Pages/NewJob.bs.js";
 import * as Prelude$Frontend from "./helpers/Prelude.bs.js";
 import * as NotFound$Frontend from "./Pages/NotFound.bs.js";
 import * as ReasonReactRouter from "reason-react/src/ReasonReactRouter.js";
@@ -23,6 +24,9 @@ function App(Props) {
           tmp = React.createElement(Jobs$Frontend.make, { });
           break;
       case 2 : 
+          tmp = React.createElement(NewJob$Frontend.make, { });
+          break;
+      case 3 : 
           tmp = React.createElement(NotFound$Frontend.make, { });
           break;
       

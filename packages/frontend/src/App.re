@@ -12,6 +12,7 @@ let make = () => {
         {switch (route) {
          | Home => <Home />
          | Jobs => <Jobs />
+         | New => <NewJob />
          | Job(id) => <Job id />
          | NotFound => <NotFound />
          }}
