@@ -11,7 +11,7 @@ let defaultUrl = page =>
 
 (async () => {
   const browser = await puppeteer.launch({
-    headless: true
+    headless: false
   });
 
   const page = await browser.newPage();
