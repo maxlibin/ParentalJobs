@@ -6,19 +6,27 @@ module Form = {
     | Category
     | Type
     | Apply
-    | Address
     | Url
+    | Description
     | Email
-    | Description;
+    | Name
+    | Statement
+    | Website
+    | More
+    | Address;
 
   type state = {
-    // email: string,
     title: string,
     category: string,
     type_: string,
     apply: string,
     description: string,
-    // category: string,
+    email: string,
+    name: string,
+    statement: string,
+    website: string,
+    more: string,
+    address: string,
   };
 
   type message = string;
@@ -29,7 +37,7 @@ module Form = {
 
     let validator = {
       field: Title,
-      strategy: Strategy.OnFirstBlur,
+      strategy: Strategy.OnSubmit,
       dependents: None,
       validate: ({title}) =>
         switch (title) {
@@ -44,7 +52,7 @@ module Form = {
 
     let validator = {
       field: Category,
-      strategy: Strategy.OnFirstBlur,
+      strategy: Strategy.OnSubmit,
       dependents: None,
       validate: ({category}) =>
         switch (category) {
@@ -59,7 +67,7 @@ module Form = {
 
     let validator = {
       field: Apply,
-      strategy: Strategy.OnFirstBlur,
+      strategy: Strategy.OnSubmit,
       dependents: None,
       validate: ({apply}) =>
         switch (apply) {
@@ -74,7 +82,7 @@ module Form = {
 
     let validator = {
       field: Description,
-      strategy: Strategy.OnFirstBlur,
+      strategy: Strategy.OnSubmit,
       dependents: None,
       validate: ({description}) =>
         switch (description) {
@@ -84,26 +92,107 @@ module Form = {
     };
   };
 
-  // module EmailField = {
-  //   let update = (state, value) => {...state, email: value};
+  module Email_F = {
+    let update = (state, value) => {...state, email: value};
 
-  //   let validator = {
-  //     field: Email,
-  //     strategy: Strategy.OnFirstSuccessOrFirstBlur,
-  //     dependents: None,
-  //     validate: ({email}) =>
-  //       switch (email) {
-  //       | "" => Error("Uh oh error")
-  //       | _ => Ok(Valid)
-  //       },
-  //   };
-  // };
+    let validator = {
+      field: Email,
+      strategy: Strategy.OnSubmit,
+      dependents: None,
+      validate: ({email}) =>
+        switch (email) {
+        | "" => Error("Please enter company's email")
+        | _ => Ok(Valid)
+        },
+    };
+  };
+
+  module Name_F = {
+    let update = (state, value) => {...state, name: value};
+
+    let validator = {
+      field: Name,
+      strategy: Strategy.OnSubmit,
+      dependents: None,
+      validate: ({name}) =>
+        switch (name) {
+        | "" => Error("Please enter company's name")
+        | _ => Ok(Valid)
+        },
+    };
+  };
+
+  module Address_F = {
+    let update = (state, value) => {...state, address: value};
+
+    let validator = {
+      field: Address,
+      strategy: Strategy.OnSubmit,
+      dependents: None,
+      validate: ({address}) =>
+        switch (address) {
+        | "" => Error("Please enter company's address")
+        | _ => Ok(Valid)
+        },
+    };
+  };
+
+  module Statement_F = {
+    let update = (state, value) => {...state, statement: value};
+
+    let validator = {
+      field: Statement,
+      strategy: Strategy.OnSubmit,
+      dependents: None,
+      validate: ({statement}) =>
+        switch (statement) {
+        | "" => Error("Please enter company's statement")
+        | _ => Ok(Valid)
+        },
+    };
+  };
+
+  module Website_F = {
+    let update = (state, value) => {...state, website: value};
+
+    let validator = {
+      field: Website,
+      strategy: Strategy.OnSubmit,
+      dependents: None,
+      validate: ({website}) =>
+        switch (website) {
+        | "" => Error("Please enter your company's website")
+        | _ => Ok(Valid)
+        },
+    };
+  };
+
+  module More_F = {
+    let update = (state, value) => {...state, more: value};
+
+    let validator = {
+      field: More,
+      strategy: Strategy.OnSubmit,
+      dependents: None,
+      validate: ({more}) =>
+        switch (more) {
+        | "" => Error("Please tell us more about your company")
+        | _ => Ok(Valid)
+        },
+    };
+  };
 
   let validators = [
-    // EmailField.validator,
     Category_F.validator,
     Title_F.validator,
     Apply_F.validator,
+    Description_F.validator,
+    Email_F.validator,
+    Name_F.validator,
+    Address_F.validator,
+    Statement_F.validator,
+    Website_F.validator,
+    More_F.validator,
   ];
 };
 

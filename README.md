@@ -75,3 +75,13 @@ Crawler is written in nodejs using puppeteer, might not be most effective way, b
 
 Tried on local machine 30mins for 2000 js executed pages. should probably should setup some clustering for the crawler.
 
+
+## Features
+
+This is a mvp version, there are list of features to be work after the submission of this mvp:
+
+- [ ] Allow submit logo in new job.
+- [ ] Type safety in backend and frontend.
+- [ ] Create a user auth.
+- [ ] User invoice.
+- [ ] Crawl mutltiple job portal sites, this is a big work, the crawler will have to keep running, keep improving this carwler is important.

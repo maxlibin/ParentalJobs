@@ -15,7 +15,13 @@ function NewJob(Props) {
         /* category */"",
         /* type_ */"fullTime",
         /* apply */"",
-        /* description */""
+        /* description */"",
+        /* email */"",
+        /* name */"",
+        /* statement */"",
+        /* website */"",
+        /* more */"",
+        /* address */""
       ], (function (state, form) {
           console.log("Submitted with:", state);
           setTimeout((function (param) {
@@ -42,102 +48,197 @@ function NewJob(Props) {
                           ])
                     }, React.createElement("h1", {
                           className: "page-title text-center"
-                        }, React.createElement("strong", undefined, Prelude$Frontend.s("Posting a Jobs has been much easier with ParentalJobs"))), React.createElement("p", {
-                          className: "text-center"
-                        }, Prelude$Frontend.s("For every job you posted, with pledge to be parents friendly, we contribute 5% to foundations to need help.")), React.createElement("form", {
+                        }, React.createElement("strong", undefined, Prelude$Frontend.s("Posting a Jobs has been much easier with ParentalJobs"))), React.createElement("form", {
                           className: "mt-8",
                           onSubmit: (function (param) {
                               return partial_arg$1(partial_arg, param);
                             })
                         }, React.createElement("h4", undefined, Prelude$Frontend.s("First, tell us about the position")), React.createElement("div", {
-                              className: "mt-5 form-group"
-                            }, React.createElement("label", undefined, React.createElement("strong", undefined, Prelude$Frontend.s("Job title"))), React.createElement("input", {
-                                  className: "form-control",
-                                  disabled: form[/* submitting */5],
-                                  value: form[/* state */0][/* title */0],
-                                  onBlur: (function (param) {
-                                      return Curry._1(form[/* blur */7], /* Title */0);
-                                    }),
-                                  onChange: (function ($$event) {
-                                      return Curry._2(form[/* change */6], /* Title */0, Curry._2(JobT$Frontend.Form[/* Title_F */0][/* update */0], form[/* state */0], $$event.target.value));
-                                    })
-                                }), React.createElement(FormErrorMsg$Frontend.make, {
-                                  type_: Curry._1(form[/* result */2], /* Title */0)
-                                })), React.createElement("div", {
-                              className: "mt-5 form-group"
-                            }, React.createElement("label", undefined, React.createElement("strong", undefined, Prelude$Frontend.s("Category"))), React.createElement("input", {
-                                  className: "form-control",
-                                  disabled: form[/* submitting */5],
-                                  value: form[/* state */0][/* category */1],
-                                  onBlur: (function (param) {
-                                      return Curry._1(form[/* blur */7], /* Category */1);
-                                    }),
-                                  onChange: (function ($$event) {
-                                      return Curry._2(form[/* change */6], /* Category */1, Curry._2(JobT$Frontend.Form[/* Category_F */1][/* update */0], form[/* state */0], $$event.target.value));
-                                    })
-                                }), React.createElement(FormErrorMsg$Frontend.make, {
-                                  type_: Curry._1(form[/* result */2], /* Category */1)
-                                })), React.createElement("div", {
-                              className: "mt-5 form-group"
+                              className: "row mt-4"
                             }, React.createElement("div", {
-                                  className: "form-label"
-                                }, React.createElement("strong", undefined, Prelude$Frontend.s("Job type"))), React.createElement("label", {
-                                  className: "custom-control custom-radio custom-control-inline"
-                                }, React.createElement("input", {
-                                      className: "custom-control-input",
-                                      checked: form[/* state */0][/* type_ */2] === "fullTime",
-                                      name: "type",
-                                      type: "radio",
-                                      value: "fullTime",
+                                  className: "form-group col-md-6"
+                                }, React.createElement("label", undefined, React.createElement("strong", undefined, Prelude$Frontend.s("Job title"))), React.createElement("input", {
+                                      className: "form-control form-control-lg",
+                                      disabled: form[/* submitting */5],
+                                      value: form[/* state */0][/* title */0],
+                                      onBlur: (function (param) {
+                                          return Curry._1(form[/* blur */7], /* Title */0);
+                                        }),
                                       onChange: (function ($$event) {
-                                          return Curry._2(form[/* change */6], /* Type */2, Curry._2(JobT$Frontend.Form[/* Category_F */1][/* update */0], form[/* state */0], $$event.target.value));
+                                          return Curry._2(form[/* change */6], /* Title */0, Curry._2(JobT$Frontend.Form[/* Title_F */0][/* update */0], form[/* state */0], $$event.target.value));
                                         })
-                                    }), React.createElement("span", {
-                                      className: "custom-control-label"
-                                    }, Prelude$Frontend.s("Full time"))), React.createElement("label", {
-                                  className: "custom-control custom-radio custom-control-inline"
-                                }, React.createElement("input", {
-                                      className: "custom-control-input",
-                                      checked: form[/* state */0][/* type_ */2] === "contact",
-                                      name: "type",
-                                      type: "radio",
-                                      value: "Contact",
+                                    }), React.createElement(FormErrorMsg$Frontend.make, {
+                                      type_: Curry._1(form[/* result */2], /* Title */0)
+                                    })), React.createElement("div", {
+                                  className: "form-group col-md-6"
+                                }, React.createElement("label", undefined, React.createElement("strong", undefined, Prelude$Frontend.s("Category"))), React.createElement("input", {
+                                      className: "form-control form-control-lg",
+                                      disabled: form[/* submitting */5],
+                                      value: form[/* state */0][/* category */1],
+                                      onBlur: (function (param) {
+                                          return Curry._1(form[/* blur */7], /* Category */1);
+                                        }),
                                       onChange: (function ($$event) {
-                                          return Curry._2(form[/* change */6], /* Type */2, Curry._2(JobT$Frontend.Form[/* Category_F */1][/* update */0], form[/* state */0], $$event.target.value));
+                                          return Curry._2(form[/* change */6], /* Category */1, Curry._2(JobT$Frontend.Form[/* Category_F */1][/* update */0], form[/* state */0], $$event.target.value));
                                         })
-                                    }), React.createElement("span", {
-                                      className: "custom-control-label"
-                                    }, Prelude$Frontend.s("Contact")))), React.createElement("div", {
-                              className: "mt-5 form-group"
-                            }, React.createElement("label", undefined, React.createElement("strong", undefined, Prelude$Frontend.s("Apply url"))), React.createElement("input", {
-                                  className: "form-control",
+                                    }), React.createElement(FormErrorMsg$Frontend.make, {
+                                      type_: Curry._1(form[/* result */2], /* Category */1)
+                                    }))), React.createElement("div", {
+                              className: "row mt-4"
+                            }, React.createElement("div", {
+                                  className: "form-group col-md-6"
+                                }, React.createElement("div", {
+                                      className: "form-label"
+                                    }, React.createElement("strong", undefined, Prelude$Frontend.s("Job type"))), React.createElement("label", {
+                                      className: "custom-control custom-radio custom-control-inline"
+                                    }, React.createElement("input", {
+                                          className: "custom-control-input",
+                                          checked: form[/* state */0][/* type_ */2] === "fullTime",
+                                          name: "type",
+                                          type: "radio",
+                                          value: "fullTime",
+                                          onChange: (function ($$event) {
+                                              return Curry._2(form[/* change */6], /* Type */2, Curry._2(JobT$Frontend.Form[/* Category_F */1][/* update */0], form[/* state */0], $$event.target.value));
+                                            })
+                                        }), React.createElement("span", {
+                                          className: "custom-control-label"
+                                        }, Prelude$Frontend.s("Full time"))), React.createElement("label", {
+                                      className: "custom-control custom-radio custom-control-inline"
+                                    }, React.createElement("input", {
+                                          className: "custom-control-input",
+                                          checked: form[/* state */0][/* type_ */2] === "contact",
+                                          name: "type",
+                                          type: "radio",
+                                          value: "Contact",
+                                          onChange: (function ($$event) {
+                                              return Curry._2(form[/* change */6], /* Type */2, Curry._2(JobT$Frontend.Form[/* Category_F */1][/* update */0], form[/* state */0], $$event.target.value));
+                                            })
+                                        }), React.createElement("span", {
+                                          className: "custom-control-label"
+                                        }, Prelude$Frontend.s("Contact")))), React.createElement("div", {
+                                  className: "form-group col-md-6"
+                                }, React.createElement("label", undefined, React.createElement("strong", undefined, Prelude$Frontend.s("Apply url"))), React.createElement("input", {
+                                      className: "form-control form-control-lg",
+                                      disabled: form[/* submitting */5],
+                                      value: form[/* state */0][/* apply */3],
+                                      onBlur: (function (param) {
+                                          return Curry._1(form[/* blur */7], /* Apply */3);
+                                        }),
+                                      onChange: (function ($$event) {
+                                          return Curry._2(form[/* change */6], /* Apply */3, Curry._2(JobT$Frontend.Form[/* Apply_F */2][/* update */0], form[/* state */0], $$event.target.value));
+                                        })
+                                    }), React.createElement(FormErrorMsg$Frontend.make, {
+                                      type_: Curry._1(form[/* result */2], /* Apply */3)
+                                    }))), React.createElement("div", {
+                              className: "row mt-4"
+                            }, React.createElement("div", {
+                                  className: "form-group col-sm-12"
+                                }, React.createElement("label", undefined, React.createElement("strong", undefined, Prelude$Frontend.s("Job description"))), React.createElement("textarea", {
+                                      className: "form-control",
+                                      disabled: form[/* submitting */5],
+                                      rows: 5,
+                                      value: form[/* state */0][/* description */4],
+                                      onBlur: (function (param) {
+                                          return Curry._1(form[/* blur */7], /* Description */5);
+                                        }),
+                                      onChange: (function ($$event) {
+                                          return Curry._2(form[/* change */6], /* Description */5, Curry._2(JobT$Frontend.Form[/* Description_F */3][/* update */0], form[/* state */0], $$event.target.value));
+                                        })
+                                    }), React.createElement(FormErrorMsg$Frontend.make, {
+                                      type_: Curry._1(form[/* result */2], /* Description */5)
+                                    }))), React.createElement("h4", {
+                              className: "mt-6"
+                            }, Prelude$Frontend.s("Tell us about the your company")), React.createElement("div", {
+                              className: "row mt5"
+                            }, React.createElement("div", {
+                                  className: "form-group col-md-6"
+                                }, React.createElement("label", undefined, React.createElement("strong", undefined, Prelude$Frontend.s("Name"))), React.createElement("input", {
+                                      className: "form-control form-control-lg",
+                                      disabled: form[/* submitting */5],
+                                      value: form[/* state */0][/* name */6],
+                                      onBlur: (function (param) {
+                                          return Curry._1(form[/* blur */7], /* Name */7);
+                                        }),
+                                      onChange: (function ($$event) {
+                                          return Curry._2(form[/* change */6], /* Name */7, Curry._2(JobT$Frontend.Form[/* Name_F */5][/* update */0], form[/* state */0], $$event.target.value));
+                                        })
+                                    }), React.createElement(FormErrorMsg$Frontend.make, {
+                                      type_: Curry._1(form[/* result */2], /* Name */7)
+                                    })), React.createElement("div", {
+                                  className: "form-group col-md-6"
+                                }, React.createElement("label", undefined, React.createElement("strong", undefined, Prelude$Frontend.s("Company statement"))), React.createElement("input", {
+                                      className: "form-control form-control-lg",
+                                      disabled: form[/* submitting */5],
+                                      value: form[/* state */0][/* statement */7],
+                                      onBlur: (function (param) {
+                                          return Curry._1(form[/* blur */7], /* Statement */8);
+                                        }),
+                                      onChange: (function ($$event) {
+                                          return Curry._2(form[/* change */6], /* Statement */8, Curry._2(JobT$Frontend.Form[/* Statement_F */7][/* update */0], form[/* state */0], $$event.target.value));
+                                        })
+                                    }), React.createElement(FormErrorMsg$Frontend.make, {
+                                      type_: Curry._1(form[/* result */2], /* Statement */8)
+                                    }))), React.createElement("div", {
+                              className: "row mt-4"
+                            }, React.createElement("div", {
+                                  className: "form-group col-md-6"
+                                }, React.createElement("label", undefined, React.createElement("strong", undefined, Prelude$Frontend.s("Website"))), React.createElement("input", {
+                                      className: "form-control form-control-lg",
+                                      disabled: form[/* submitting */5],
+                                      value: form[/* state */0][/* website */8],
+                                      onBlur: (function (param) {
+                                          return Curry._1(form[/* blur */7], /* Website */9);
+                                        }),
+                                      onChange: (function ($$event) {
+                                          return Curry._2(form[/* change */6], /* Website */9, Curry._2(JobT$Frontend.Form[/* Website_F */8][/* update */0], form[/* state */0], $$event.target.value));
+                                        })
+                                    }), React.createElement(FormErrorMsg$Frontend.make, {
+                                      type_: Curry._1(form[/* result */2], /* Website */9)
+                                    })), React.createElement("div", {
+                                  className: "form-group col-md-6"
+                                }, React.createElement("label", undefined, React.createElement("strong", undefined, Prelude$Frontend.s("Email"))), React.createElement("input", {
+                                      className: "form-control form-control-lg",
+                                      disabled: form[/* submitting */5],
+                                      value: form[/* state */0][/* email */5],
+                                      onBlur: (function (param) {
+                                          return Curry._1(form[/* blur */7], /* Email */6);
+                                        }),
+                                      onChange: (function ($$event) {
+                                          return Curry._2(form[/* change */6], /* Email */6, Curry._2(JobT$Frontend.Form[/* Email_F */4][/* update */0], form[/* state */0], $$event.target.value));
+                                        })
+                                    }), React.createElement(FormErrorMsg$Frontend.make, {
+                                      type_: Curry._1(form[/* result */2], /* Email */6)
+                                    }))), React.createElement("div", {
+                              className: "mt-4 form-group"
+                            }, React.createElement("label", undefined, React.createElement("strong", undefined, Prelude$Frontend.s("Address"))), React.createElement("input", {
+                                  className: "form-control form-control-lg",
                                   disabled: form[/* submitting */5],
-                                  value: form[/* state */0][/* apply */3],
+                                  value: form[/* state */0][/* address */10],
                                   onBlur: (function (param) {
-                                      return Curry._1(form[/* blur */7], /* Apply */3);
+                                      return Curry._1(form[/* blur */7], /* Address */11);
                                     }),
                                   onChange: (function ($$event) {
-                                      return Curry._2(form[/* change */6], /* Apply */3, Curry._2(JobT$Frontend.Form[/* Apply_F */2][/* update */0], form[/* state */0], $$event.target.value));
+                                      return Curry._2(form[/* change */6], /* Address */11, Curry._2(JobT$Frontend.Form[/* Address_F */6][/* update */0], form[/* state */0], $$event.target.value));
                                     })
                                 }), React.createElement(FormErrorMsg$Frontend.make, {
-                                  type_: Curry._1(form[/* result */2], /* Apply */3)
+                                  type_: Curry._1(form[/* result */2], /* Address */11)
                                 })), React.createElement("div", {
-                              className: "mt-5 form-group"
-                            }, React.createElement("label", undefined, React.createElement("strong", undefined, Prelude$Frontend.s("Job description"))), React.createElement("textarea", {
+                              className: "mt-4 form-group"
+                            }, React.createElement("label", undefined, React.createElement("strong", undefined, Prelude$Frontend.s("Tell us more about your company"))), React.createElement("textarea", {
                                   className: "form-control",
                                   disabled: form[/* submitting */5],
                                   rows: 5,
-                                  value: form[/* state */0][/* description */4],
+                                  value: form[/* state */0][/* more */9],
                                   onBlur: (function (param) {
-                                      return Curry._1(form[/* blur */7], /* Description */7);
+                                      return Curry._1(form[/* blur */7], /* More */10);
                                     }),
                                   onChange: (function ($$event) {
-                                      return Curry._2(form[/* change */6], /* Description */7, Curry._2(JobT$Frontend.Form[/* Description_F */3][/* update */0], form[/* state */0], $$event.target.value));
+                                      return Curry._2(form[/* change */6], /* More */10, Curry._2(JobT$Frontend.Form[/* More_F */9][/* update */0], form[/* state */0], $$event.target.value));
                                     })
                                 }), React.createElement(FormErrorMsg$Frontend.make, {
-                                  type_: Curry._1(form[/* result */2], /* Apply */3)
+                                  type_: Curry._1(form[/* result */2], /* More */10)
                                 })), React.createElement("button", {
-                              className: "btn btn-primary",
+                              className: "btn btn-info btn-lg",
                               disabled: form[/* submitting */5]
                             }, match ? "Submitting..." : "Submit")))));
 }
