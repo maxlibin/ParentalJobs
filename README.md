@@ -63,6 +63,14 @@ mongod --dbpath=/data
 
 You should see the mongod process start up and print some status information.
 
+The mongo database was dumped in /dump
+
+to restore:
+
+```
+mongorestore --host localhost --port 27017 --db ./dump/parentalJobs
+```
+
 ### Crawler:
 
 Crawler will crawl `skillfuture website` recusivly using puppeteer(for js execution), currently set to total crawl page to 50.
@@ -73,7 +81,7 @@ yarn crawl
 
 Crawler is written in nodejs using puppeteer, might not be most effective way, but it does the job that crawls js executed site, for now.
 
-Tried on local machine 30mins for 2000 js executed pages. should probably should setup some clustering for the crawler.
+Tried on local machine, the first time I tried I took 30mins for 2000 js executed pages. the last try with my external monitor off, and stop some youtube videos, it took about 15-20 mins, nearly half faster, btw still should probably setup some clustering for the crawler.
 
 
 ## Features
