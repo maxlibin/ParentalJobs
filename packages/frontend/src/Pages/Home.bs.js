@@ -55,7 +55,7 @@ function Home(Props) {
                               onClick: (function (param) {
                                   return Prelude$Frontend.linkTo("/job/new", param);
                                 })
-                            }, Prelude$Frontend.s("Post a job for $79!"))))), React.createElement("div", {
+                            }, Prelude$Frontend.s("Post a job for $179!"))))), React.createElement("div", {
                   className: Cn.make(/* :: */[
                         "container",
                         /* :: */[

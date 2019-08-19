@@ -33,7 +33,7 @@ let make = () => {
             ->s
           </h3>
           <button className=Css.button onClick={"/job/new"->linkTo}>
-            "Post a job for $79!"->s
+            "Post a job for $179!"->s
           </button>
         </div>
       </div>
