@@ -32,10 +32,7 @@ let reducer = (state, action) => {
 let make = () => {
   let ({jobs, currentPage}, dispatch) =
     React.useReducer(reducer, initialState);
-  Js.log(
-    "/api/jobs"
-    ++ jobsQuery(currentPage == 1 ? 0 : currentPage * limit, limit),
-  );
+
   React.useEffect1(
     () => {
       Js.Promise.(

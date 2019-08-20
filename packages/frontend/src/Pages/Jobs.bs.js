@@ -40,8 +40,6 @@ function Jobs(Props) {
   var match$1 = match[0];
   var currentPage = match$1[/* currentPage */1];
   var jobs = match$1[/* jobs */0];
-  var match$2 = currentPage === 1;
-  console.log("/api/jobs" + jobsQuery(match$2 ? 0 : Caml_int32.imul(currentPage, 20), 20));
   React.useEffect((function () {
           var match = currentPage === 1;
           Api$Frontend.Jobs[/* jobs */1]("/api/jobs" + jobsQuery(match ? 0 : Caml_int32.imul(currentPage, 20), 20)).then((function (res) {
@@ -57,14 +55,14 @@ function Jobs(Props) {
   } else if (jobs.tag) {
     tmp = Prelude$Frontend.s(jobs[0].toString());
   } else {
-    var match$3 = currentPage < 3;
+    var match$2 = currentPage < 3;
     tmp = React.createElement(React.Fragment, undefined, React.createElement(JobsList$Frontend.make, {
               jobs: jobs[0]
             }), React.createElement("div", {
               className: "dataTables_wrapper no-footer"
             }, React.createElement("div", {
                   className: "dataTables_paginate paging_simple_numbers"
-                }, React.createElement("span", undefined, match$3 ? React.createElement(React.Fragment, undefined, Prelude$Frontend.RR[/* list */9](Belt_List.map(/* :: */[
+                }, React.createElement("span", undefined, match$2 ? React.createElement(React.Fragment, undefined, Prelude$Frontend.RR[/* list */9](Belt_List.map(/* :: */[
                                     1,
                                     /* :: */[
                                       2,

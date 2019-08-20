@@ -21,17 +21,15 @@ let make = () => {
           website: "",
           more: "",
         },
-      ~onSubmit=(state, form) => {
-        Js.log2("Submitted with:", state);
-        Js.Global.setTimeout(
-          () => {
-            form.notifyOnSuccess(None);
-            form.reset->Js.Global.setTimeout(3000)->ignore;
-          },
-          500,
-        )
-        ->ignore;
-      },
+      ~onSubmit=(state, form) =>
+      Js.Global.setTimeout(
+        () => {
+          form.notifyOnSuccess(None);
+          form.reset->Js.Global.setTimeout(3000)->ignore;
+        },
+        500,
+      )
+      ->ignore
     );
 
   <div className="container">
