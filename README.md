@@ -92,4 +92,5 @@ This is a mvp version, there are list of features to be work after the submissio
 - [ ] Type safety in backend and frontend.
 - [ ] Create a user auth.
 - [ ] User invoice.
+- [ ] Improve pagination.
 - [ ] Crawl mutltiple job portal sites, this is a big work, the crawler will have to keep running, keep improving this carwler is important.
