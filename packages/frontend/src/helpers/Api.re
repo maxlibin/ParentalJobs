@@ -10,6 +10,10 @@ module Fetch = {
 
 module Jobs = {
   let latest = decode => Fetch.get("/api/jobs/latest", decode);
-  let jobs = decode => Fetch.get("/api/jobs", decode);
+  let jobs = url =>
+    Fetch.get(
+      url,
+      Atdgen_codec_runtime.Decode.decode(Jobs_bs.read_latestJobs),
+    );
   let job = (id, decode) => Fetch.get({j|/api/job/$id|j}, decode);
 };

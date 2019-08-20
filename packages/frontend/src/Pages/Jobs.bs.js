@@ -4,40 +4,132 @@ import * as Cn from "re-classnames/src/Cn.bs.js";
 import * as Block from "bs-platform/lib/es6/block.js";
 import * as Curry from "bs-platform/lib/es6/curry.js";
 import * as React from "react";
+import * as Belt_List from "bs-platform/lib/es6/belt_List.js";
+import * as Caml_int32 from "bs-platform/lib/es6/caml_int32.js";
 import * as Api$Frontend from "../helpers/Api.bs.js";
-import * as Jobs_bs$Frontend from "../types/jobs_bs.bs.js";
 import * as Prelude$Frontend from "../helpers/Prelude.bs.js";
 import * as JobsList$Frontend from "../components/JobsList.bs.js";
 import * as Jobs_Css$Frontend from "./Jobs_Css.bs.js";
-import * as Atdgen_codec_runtime from "@ahrefs/bs-atdgen-codec-runtime/src/atdgen_codec_runtime.bs.js";
+
+function jobsQuery(skip, limit) {
+  return "?skip=" + (String(skip) + ("&limit=" + (String(limit) + "")));
+}
+
+var initialState = /* record */[
+  /* jobs : Loading */0,
+  /* currentPage */1
+];
+
+function reducer(state, action) {
+  if (action.tag) {
+    return /* record */[
+            /* jobs */action[0],
+            /* currentPage */state[/* currentPage */1]
+          ];
+  } else {
+    return /* record */[
+            /* jobs */state[/* jobs */0],
+            /* currentPage */action[0]
+          ];
+  }
+}
 
 function Jobs(Props) {
-  var match = React.useState((function () {
-          return /* Loading */0;
-        }));
-  var setJobs = match[1];
-  var jobs = match[0];
+  var match = React.useReducer(reducer, initialState);
+  var dispatch = match[1];
+  var match$1 = match[0];
+  var currentPage = match$1[/* currentPage */1];
+  var jobs = match$1[/* jobs */0];
+  var match$2 = currentPage === 1;
+  console.log("/api/jobs" + jobsQuery(match$2 ? 0 : Caml_int32.imul(currentPage, 20), 20));
   React.useEffect((function () {
-          var partial_arg = Atdgen_codec_runtime.Decode[/* decode */1];
-          Api$Frontend.Jobs[/* jobs */1]((function (param) {
-                      return partial_arg(Jobs_bs$Frontend.read_latestJobs, param);
-                    })).then((function (res) {
-                    return Promise.resolve(Curry._1(setJobs, (function (param) {
-                                      return /* Loaded */Block.__(0, [res]);
-                                    })));
+          var match = currentPage === 1;
+          Api$Frontend.Jobs[/* jobs */1]("/api/jobs" + jobsQuery(match ? 0 : Caml_int32.imul(currentPage, 20), 20)).then((function (res) {
+                    return Promise.resolve(Curry._1(dispatch, /* SetJobs */Block.__(1, [/* Loaded */Block.__(0, [res])])));
                   })).catch((function (err) {
-                  return Promise.resolve(Curry._1(setJobs, (function (param) {
-                                    return /* Error */Block.__(1, [err]);
-                                  })));
+                  return Promise.resolve(Curry._1(dispatch, /* SetJobs */Block.__(1, [/* Error */Block.__(1, [err])])));
                 }));
           return undefined;
-        }), ([]));
+        }), /* array */[currentPage]);
   var tmp;
-  tmp = typeof jobs === "number" ? Prelude$Frontend.s("Loading...") : (
-      jobs.tag ? Prelude$Frontend.s(jobs[0].toString()) : React.createElement(React.Fragment, undefined, React.createElement(JobsList$Frontend.make, {
-                  jobs: jobs[0]
-                }))
-    );
+  if (typeof jobs === "number") {
+    tmp = Prelude$Frontend.s("Loading...");
+  } else if (jobs.tag) {
+    tmp = Prelude$Frontend.s(jobs[0].toString());
+  } else {
+    var match$3 = currentPage < 3;
+    tmp = React.createElement(React.Fragment, undefined, React.createElement(JobsList$Frontend.make, {
+              jobs: jobs[0]
+            }), React.createElement("div", {
+              className: "dataTables_wrapper no-footer"
+            }, React.createElement("div", {
+                  className: "dataTables_paginate paging_simple_numbers"
+                }, React.createElement("span", undefined, match$3 ? React.createElement(React.Fragment, undefined, Prelude$Frontend.RR[/* list */9](Belt_List.map(/* :: */[
+                                    1,
+                                    /* :: */[
+                                      2,
+                                      /* :: */[
+                                        3,
+                                        /* :: */[
+                                          4,
+                                          /* [] */0
+                                        ]
+                                      ]
+                                    ]
+                                  ], (function (item) {
+                                      return React.createElement("a", {
+                                                  key: String(item),
+                                                  className: Cn.make(/* :: */[
+                                                        "paginate_button",
+                                                        /* :: */[
+                                                          Cn.ifTrue("current", currentPage === item),
+                                                          /* [] */0
+                                                        ]
+                                                      ]),
+                                                  onClick: (function (param) {
+                                                      return Curry._1(dispatch, /* SetCurrentPage */Block.__(0, [item]));
+                                                    })
+                                                }, Prelude$Frontend.s(String(item)));
+                                    })))) : React.createElement(React.Fragment, undefined, React.createElement("a", {
+                                className: Cn.make(/* :: */[
+                                      "paginate_button",
+                                      /* :: */[
+                                        Cn.ifTrue("current", currentPage === 1),
+                                        /* [] */0
+                                      ]
+                                    ]),
+                                onClick: (function (param) {
+                                    return Curry._1(dispatch, /* SetCurrentPage */Block.__(0, [currentPage - 2 | 0]));
+                                  })
+                              }, Prelude$Frontend.s(String(currentPage - 2 | 0))), React.createElement("a", {
+                                className: Cn.make(/* :: */[
+                                      "paginate_button",
+                                      /* [] */0
+                                    ]),
+                                onClick: (function (param) {
+                                    return Curry._1(dispatch, /* SetCurrentPage */Block.__(0, [currentPage - 1 | 0]));
+                                  })
+                              }, Prelude$Frontend.s(String(currentPage - 1 | 0))), React.createElement("a", {
+                                className: Cn.make(/* :: */[
+                                      "paginate_button",
+                                      /* :: */[
+                                        "current",
+                                        /* [] */0
+                                      ]
+                                    ]),
+                                onClick: (function (param) {
+                                    return Curry._1(dispatch, /* SetCurrentPage */Block.__(0, [currentPage]));
+                                  })
+                              }, Prelude$Frontend.s(String(currentPage))), React.createElement("a", {
+                                className: Cn.make(/* :: */[
+                                      "paginate_button",
+                                      /* [] */0
+                                    ]),
+                                onClick: (function (param) {
+                                    return Curry._1(dispatch, /* SetCurrentPage */Block.__(0, [currentPage + 1 | 0]));
+                                  })
+                              }, Prelude$Frontend.s(String(currentPage + 1 | 0))))))));
+  }
   return React.createElement("div", {
               className: "container"
             }, React.createElement("div", {
@@ -57,10 +149,16 @@ function Jobs(Props) {
 
 var Css = 0;
 
+var limit = 20;
+
 var make = Jobs;
 
 export {
   Css ,
+  limit ,
+  jobsQuery ,
+  initialState ,
+  reducer ,
   make ,
   
 }

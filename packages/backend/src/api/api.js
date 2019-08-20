@@ -11,10 +11,10 @@ router.get("/", function(req, res) {
 
 router.get("/jobs", function(req, res) {
   let { skip, limit } = req.query;
-  limit = limit ? limit : defaultLimit;
-  skip = skip ? skip : 0;
+  limit = (limit ? limit : defaultLimit) - 0;
+  skip = (skip ? skip : 0) - 0;
 
-  JobsModal.find({}, null, { skip: skip, limit: limit }, (err, docs) => {
+  JobsModal.find({}, null, { skip, limit }, (err, docs) => {
     res.status(200).json(docs);
   });
 });

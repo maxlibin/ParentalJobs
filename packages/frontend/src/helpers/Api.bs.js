@@ -2,6 +2,8 @@
 
 import * as Curry from "bs-platform/lib/es6/curry.js";
 import * as Fetch from "bs-fetch/src/Fetch.js";
+import * as Jobs_bs$Frontend from "../types/jobs_bs.bs.js";
+import * as Atdgen_codec_runtime from "@ahrefs/bs-atdgen-codec-runtime/src/atdgen_codec_runtime.bs.js";
 
 function get(url, decode) {
   return fetch(url, Fetch.RequestInit[/* make */0](/* Get */0, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined)(/* () */0)).then((function (prim) {
@@ -17,8 +19,11 @@ function latest(decode) {
   return get("/api/jobs/latest", decode);
 }
 
-function jobs(decode) {
-  return get("/api/jobs", decode);
+function jobs(url) {
+  var partial_arg = Atdgen_codec_runtime.Decode[/* decode */1];
+  return get(url, (function (param) {
+                return partial_arg(Jobs_bs$Frontend.read_latestJobs, param);
+              }));
 }
 
 function job(id, decode) {
@@ -36,4 +41,4 @@ export {
   Jobs ,
   
 }
-/* No side effect */
+/* Jobs_bs-Frontend Not a pure module */
