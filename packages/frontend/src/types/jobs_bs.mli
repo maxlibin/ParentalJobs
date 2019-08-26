@@ -16,7 +16,8 @@ type jobOverview = Jobs_t.jobOverview = {
   minExperience: string;
   jobCategories: string;
   salary: salary;
-  postedOn: string
+  postedOn: string;
+  parentsFriendly: bool
 }
 
 type latestJobs = Jobs_t.latestJobs

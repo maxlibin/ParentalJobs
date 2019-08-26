@@ -160,7 +160,49 @@ var parentFriendlyjob = Emotion.css(undefined, /* :: */[
                 0.18
               ]
             ]),
-        /* [] */0
+        /* :: */[
+          Emotion.borderLeft(/* `px */[
+                25096,
+                5
+              ], /* solid */12956715, /* `rgba */[
+                -878128972,
+                /* tuple */[
+                  255,
+                  137,
+                  32,
+                  0.8888
+                ]
+              ]),
+          /* :: */[
+            Emotion.hover(/* :: */[
+                  Emotion.backgroundColor(/* `rgba */[
+                        -878128972,
+                        /* tuple */[
+                          255,
+                          137,
+                          32,
+                          0.28
+                        ]
+                      ]),
+                  /* :: */[
+                    Emotion.borderLeft(/* `px */[
+                          25096,
+                          5
+                        ], /* solid */12956715, /* `rgba */[
+                          -878128972,
+                          /* tuple */[
+                            255,
+                            137,
+                            32,
+                            0.9888
+                          ]
+                        ]),
+                    /* [] */0
+                  ]
+                ]),
+            /* [] */0
+          ]
+        ]
       ]
     ]);
 

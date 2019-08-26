@@ -21,7 +21,7 @@ let make = () => {
           website: "",
           more: "",
         },
-      ~onSubmit=(state, form) =>
+      ~onSubmit=(_state, form) =>
       Js.Global.setTimeout(
         () => {
           form.notifyOnSuccess(None);

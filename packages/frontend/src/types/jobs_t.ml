@@ -12,7 +12,8 @@ type jobOverview = {
   minExperience: string;
   jobCategories: string;
   salary: salary;
-  postedOn: string
+  postedOn: string;
+  parentsFriendly: bool
 }
 
 type latestJobs = jobOverview list

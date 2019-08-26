@@ -7,10 +7,22 @@ let make = (~jobs: Jobs_bs.latestJobs) => {
   <ul className=Css.jobsListWrapper>
     {jobs
      ->List.map(
-         ({_id as id, company, jobTitle, employmentType, jobCategories}) =>
+         (
+           {
+             _id as id,
+             company,
+             jobTitle,
+             employmentType,
+             jobCategories,
+             parentsFriendly,
+           },
+         ) =>
          <li
            key=id
-           className=Css.job
+           className={Cn.make([
+             Css.job,
+             Css.parentFriendlyjob->Cn.ifTrue(parentsFriendly),
+           ])}
            onClick={event => {j|/job/$id|j}->linkTo(event)}>
            <Avatar className=Css.avatar company />
            <div>

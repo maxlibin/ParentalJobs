@@ -45,6 +45,12 @@ let avatar = [%css [
 
 let parentFriendlyjob = [%css [
   backgroundColor (`rgba(255, 137, 32, 0.18));
+  borderLeft (`px 5) `solid (`rgba(255, 137, 32, 0.8888));
+
+  hover [
+    backgroundColor (`rgba(255, 137, 32, 0.28));
+    borderLeft (`px 5) `solid (`rgba(255, 137, 32, 0.9888));
+  ];
 ]]
 
 let company =  [%css [

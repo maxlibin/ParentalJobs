@@ -22,8 +22,7 @@ function NewJob(Props) {
         /* website */"",
         /* more */"",
         /* address */""
-      ], (function (state, form) {
-          console.log("Submitted with:", state);
+      ], (function (_state, form) {
           setTimeout((function (param) {
                   Curry._1(form[/* notifyOnSuccess */0], undefined);
                   setTimeout(form[/* reset */2], 3000);

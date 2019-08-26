@@ -54,7 +54,10 @@ var write_jobOverview = Atdgen_codec_runtime.Encode[/* make */0]((function (t) {
                                   Atdgen_codec_runtime.Encode[/* field */12](undefined, write_salary, "salary", t[/* salary */7]),
                                   /* :: */[
                                     Atdgen_codec_runtime.Encode[/* field */12](undefined, Atdgen_codec_runtime.Encode[/* string */3], "postedOn", t[/* postedOn */8]),
-                                    /* [] */0
+                                    /* :: */[
+                                      Atdgen_codec_runtime.Encode[/* field */12](undefined, Atdgen_codec_runtime.Encode[/* bool */6], "parentsFriendly", t[/* parentsFriendly */9]),
+                                      /* [] */0
+                                    ]
                                   ]
                                 ]
                               ]
@@ -84,6 +87,8 @@ var read_jobOverview = Atdgen_codec_runtime.Decode[/* make */0]((function (json)
         var partial_arg$14 = Atdgen_codec_runtime.Decode[/* field */15];
         var partial_arg$15 = Atdgen_codec_runtime.Decode[/* string */7];
         var partial_arg$16 = Atdgen_codec_runtime.Decode[/* field */15];
+        var partial_arg$17 = Atdgen_codec_runtime.Decode[/* bool */3];
+        var partial_arg$18 = Atdgen_codec_runtime.Decode[/* field */15];
         return /* record */[
                 /* _id */Atdgen_codec_runtime.Decode[/* decode */1]((function (param) {
                         return partial_arg$1("_id", partial_arg, param);
@@ -111,6 +116,9 @@ var read_jobOverview = Atdgen_codec_runtime.Decode[/* make */0]((function (json)
                       }), json),
                 /* postedOn */Atdgen_codec_runtime.Decode[/* decode */1]((function (param) {
                         return partial_arg$16("postedOn", partial_arg$15, param);
+                      }), json),
+                /* parentsFriendly */Atdgen_codec_runtime.Decode[/* decode */1]((function (param) {
+                        return partial_arg$18("parentsFriendly", partial_arg$17, param);
                       }), json)
               ];
       }));

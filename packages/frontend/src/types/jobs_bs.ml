@@ -16,7 +16,8 @@ type jobOverview = Jobs_t.jobOverview = {
   minExperience: string;
   jobCategories: string;
   salary: salary;
-  postedOn: string
+  postedOn: string;
+  parentsFriendly: bool
 }
 
 type latestJobs = Jobs_t.latestJobs
@@ -161,6 +162,13 @@ let write_jobOverview = (
             )
           ~name:"postedOn"
           t.postedOn
+        ;
+          Atdgen_codec_runtime.Encode.field
+            (
+            Atdgen_codec_runtime.Encode.bool
+            )
+          ~name:"parentsFriendly"
+          t.parentsFriendly
       ]
     )
   )
@@ -222,6 +230,12 @@ let read_jobOverview = (
             (
               Atdgen_codec_runtime.Decode.string
               |> Atdgen_codec_runtime.Decode.field "postedOn"
+            ) json;
+          parentsFriendly =
+            Atdgen_codec_runtime.Decode.decode
+            (
+              Atdgen_codec_runtime.Decode.bool
+              |> Atdgen_codec_runtime.Decode.field "parentsFriendly"
             ) json;
       } : jobOverview)
     )
