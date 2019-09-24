@@ -96,3 +96,6 @@ This is a mvp version, there are list of features to be work after the submissio
 - [ ] User invoice.
 - [ ] Improve pagination.
 - [ ] Crawl mutltiple job portal sites, this is a big work, the crawler will have to keep running, keep improving this carwler is important.
+
+![screenshot 1](screenshots/1.png)
+![screenshot 1](screenshots/2.png)
