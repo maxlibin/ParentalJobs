@@ -1,4 +1,6 @@
-# Parental Jobs
+# Jobs portal
+
+This is a hackaton project, feel free to use anyway you want.
 
 ### Web:
 Clone the project to your local folder:
